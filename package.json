@@ -1,0 +1,19 @@
+{
+  "name": "collabXR",
+  "version": "1.0.0",
+  "description": "literature review map by Faisal(jQuery404)",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "collabXR",
+    "map"
+  ],
+  "author": "jquery404",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
