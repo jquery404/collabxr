@@ -1,0 +1,39 @@
+body{ background-color: #F8F8FB; }
+h1 {
+    font-family: "Chronicle Display","Times Roman","Times New Roman",Georgia,serif;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 10px;
+}
+.social-link {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    margin: 0 5px 0 0;
+}
+.social-link a {
+    border-radius: 15px;
+    border: 1px solid #7dabf7;
+    width: 30px;
+    height: 30px;
+    display: inline-block;
+    padding: 2px;
+}
+span.round { border-radius: 50%;color: #fff;text-align: center;background: #000;padding: 5px 8px; }
+.cat_label {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    padding: 0;
+    margin: 1em 0;
+    list-style: none;
+    background: #ffd893;
+}
+.cat_label li{ font-size: 10px; font-weight: 700;}
+#parsed_csv_list { font-size: 0.75rem; }
+.heatmap {
+    width: 100%;
+    position: relative;
+    overflow-x: scroll;
+    white-space: nowrap;
+}
