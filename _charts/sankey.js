@@ -8,8 +8,8 @@ var UXCat = ['Decision making', 'Usability', 'Presence', 'Perception', 'Emotion'
 function loadChart(){
     google.load('visualization', '1.1', {packages: ['sankey', 'corechart', 'bar']});
     google.setOnLoadCallback(drawSankeyChart);
-    google.setOnLoadCallback(drawBarChart);
-    google.setOnLoadCallback(drawYearBarChart);
+    //google.setOnLoadCallback(drawBarChart);
+    //google.setOnLoadCallback(drawYearBarChart);
 }
 
 function drawYearBarChart() {
@@ -175,9 +175,11 @@ function parseHTMLTable(results){
                 //     table+= "</td>";
                 // }else{
                     if (j==0) table+= "<td>"+i+"</td>";
-                    table+= "<td>";
-                    table+= cells[j];
-                    table+= "</td>";
+                    
+                    if(j==12 && cells[j]!=='') 
+                        table+= `<td><span class="videourl" onmouseover="playVideoPreview(this)" onmouseout="stopVideoPreview(this)">${cells[j]}</b></td>`;
+                    else table+= "<td>" + cells[j] + "</td>";
+
                     if (j==cells.length-1) table+="<td><span class='round' style='background: "+colors[Math.floor(Math.random()*colors.length)]+"';>"+makeid(1)+"</span></td>";
 
                 // }
@@ -205,11 +207,10 @@ function uglyArray(arr1, arr2, pos1, pos2){
     var arr = [];
     for(var i=0; i< arr1.length; i++){
         for(var j=0; j<arr2.length; j++){
-            if(pos2==11) console.log([arr1[i], arr2[j], countTable(arr1[i], arr2[j], pos1, pos2)]);
+            //if(pos2==11) console.log([arr1[i], arr2[j], countTable(arr1[i], arr2[j], pos1, pos2)]);
             arr.push([arr1[i], arr2[j], countTable(arr1[i], arr2[j], pos1, pos2)]);
         }
     }
-    console.log(arr);
     return arr;
 }
 

@@ -44,7 +44,7 @@
     </header>
 
     <div class="row justify-content-center">
-        <div class="col-11">
+        <div class="col-8">
             <div id="sankey_basic" class="mb-3" style="height: 400px; margin:0 auto;"></div>
             <div>
                 <ul class="cat_label">
@@ -55,15 +55,15 @@
                     <li>Evaluation Type</li>
                 </ul>
             </div>
-            <div id="bar_basic" class="mb-3" style="height: 600px; margin:0 auto;"></div>
-            <div id="year_bar_basic" class="mb-3" style="height: 600px; margin:0 auto;"></div>
+            <!-- <div id="bar_basic" class="mb-3" style="height: 600px; margin:0 auto;"></div>
+            <div id="year_bar_basic" class="mb-3" style="height: 600px; margin:0 auto;"></div> -->
         </div>
 
-        <div class="col-10"><div class="heatmap"></div></div>
+        <!-- <div class="col-10"><div class="heatmap"></div></div> -->
         <div class="col-10"><div class="streamgraph"></div></div>
         <div class="col-10">
             <div class="row">
-                <div class="col-8">
+                <div class="col-9">
                     <div class="swarm"></div>
                 </div>
                 <div class="col-1 mt-5">
@@ -83,23 +83,55 @@
     <footer>
 		<div class="footer-copyright text-center py-3">
             Copyright &copy; <span id="copyright"></span> <a href="https://jquery404.github.io/">Faisal Zaman</a>. All Rights Reserved. 
-            <a href="">PRIVACY POLICY</a> | 
-            <a href="">USER AGREEMENT</a>
+            <a href="">PRIVACY POLICY</a> | <a href="">USER AGREEMENT</a>
         </div>
-	</footer>
+    </footer>
+    
+    
+    <iframe id="videoplayer"></iframe>
 </div>
 
-<script type="text/javascript" src="sankey.js"></script>
-<script type="text/javascript" src="heatmap.js"></script>
-<script type="text/javascript" src="stream.js"></script>
-<script type="text/javascript" src="swarm.js"></script>
+<script type="text/javascript" src="_charts/sankey.js"></script>
+<script type="text/javascript" src="_charts/heatmap.js"></script>
+<script type="text/javascript" src="_charts/stream.js"></script>
+<script type="text/javascript" src="_charts/swarm.js"></script>
 <script type="text/javascript">
+    
+    let nowPlaying = false;
+
     document.addEventListener("DOMContentLoaded", function(event) { 
         loadCSV();
-        initHeatmap();
+        // initHeatmap();
         // initStreamgraph();
+        initSwarm();
+
         document.getElementById('copyright').innerHTML = new Date().getFullYear();
     });
+
+
+
+    
+    function playVideoPreview(e){
+        let vdoPlr = document.getElementById('videoplayer');
+        let x = event.pageX; 
+        let y = event.pageY; 
+        let src = e.innerHTML;
+
+        vdoPlr.style.display = 'block';
+        vdoPlr.style.left = x + 20 + 'px';
+        vdoPlr.style.top = y + 20 + 'px';
+        
+        let ampersandPosition = src.indexOf('=');
+        if(ampersandPosition != -1) src = src.substring(ampersandPosition+1, src.length);
+               
+        vdoPlr.src = 'https://www.youtube.com/embed/'+src+'/?autoplay=1&mute=1&enablejsapi=1';
+    }
+
+    function stopVideoPreview(e){
+        let vdoPlr = document.getElementById('videoplayer');
+        vdoPlr.style.display = 'none';
+        vdoPlr.src = '';
+    }
 
 
 </script>
