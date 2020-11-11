@@ -199,7 +199,7 @@ function initSwarm(){
         function playwithColor(dt){
             //["#BE5039","#DE5F42","#EDA645","#F8D85E","#EDE4C2","#CCE3BF", "#ADD299", "#7ABA60", "#4497D7"]
             let max = 56;
-            if(dt.industry == 'Entertainment')
+            if(dt.industry == 'ISMAR')
                 return "rgba(190, 80, 57,"+((dt.index/max).toFixed(1))+")";
             else if(dt.industry == 'Media')
                 return "rgba(237, 166, 69,"+((dt.index/max).toFixed(1))+")";

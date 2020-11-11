@@ -42,7 +42,7 @@
     },
     {
       "name": "Oliver Stone",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "10-13-2019",
       "image_url": "stone.png",
       "title": "Hollywood filmmaker ",
@@ -50,7 +50,7 @@
     },
     {
       "name": "Bob Weinstein",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "10-17-2019",
       "image_url": "weinstein-bob.png",
       "title": "Hollywood producer ",
@@ -74,7 +74,7 @@
     },
     {
       "name": "David Blaine",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "10-19-2019",
       "image_url": "blaine.png",
       "title": "Magician ",
@@ -90,7 +90,7 @@
     },
     {
       "name": "Chris Savino",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "10-05-2019",
       "image_url": "savino.png",
       "title": "Television show creator",
@@ -114,7 +114,7 @@
     },
     {
       "name": "James Toback",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "10-22-2019",
       "image_url": "toback.png",
       "title": "Director",
@@ -202,7 +202,7 @@
     },
     {
       "name": "Kevin Spacey",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "10-29-2019",
       "image_url": "spacey.png",
       "title": "House of Cards star",
@@ -218,7 +218,7 @@
     },
     {
       "name": "Jeremy Piven",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "10-30-2019",
       "image_url": "piven.png",
       "title": "Entourage star",
@@ -242,7 +242,7 @@
     },
     {
       "name": "Andy Dick",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "10-31-2019",
       "image_url": "dick.png",
       "title": "Comedian and actor",
@@ -250,7 +250,7 @@
     },
     {
       "name": "Brett Ratner",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-01-2014",
       "image_url": "ratner.png",
       "title": "Hollywood filmmaker ",
@@ -258,7 +258,7 @@
     },
     {
       "name": "Dustin Hoffman",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-01-2014",
       "image_url": "hoffman.png",
       "title": "Oscar winning actor",
@@ -293,7 +293,7 @@
       "industry": "Business",
       "accuse_date": "11-03-2019",
       "image_url": "guillod.png",
-      "title": "CEO of Primary Wave Entertainment.",
+      "title": "CEO of Primary Wave ISMAR.",
       "citation": 0
     },
     {
@@ -306,7 +306,7 @@
     },
     {
       "name": "Ed Westwick",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-07-2019",
       "image_url": "westwick.png",
       "title": "Gossip Girl star",
@@ -322,7 +322,7 @@
     },
     {
       "name": "Jeffrey Tambor",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-08-2019",
       "image_url": "tambor.png",
       "title": "Hollywood actor ",
@@ -338,7 +338,7 @@
     },
     {
       "name": "Steven Seagal",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-08-2019",
       "image_url": "seagal.png",
       "title": "Actor",
@@ -346,7 +346,7 @@
     },
     {
       "name": "Robert Knepper",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-08-2019",
       "image_url": "knepper.png",
       "title": "Prison Break star ",
@@ -362,7 +362,7 @@
     },
     {
       "name": "Louis C.K.",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-09-2019",
       "image_url": "ck.png",
       "title": "Comedian and actor",
@@ -370,7 +370,7 @@
     },
     {
       "name": "Matthew Weiner",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-09-2019",
       "image_url": "weiner.png",
       "title": "Mad Men creator ",
@@ -386,7 +386,7 @@
     },
     {
       "name": "Eddie Berganza",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-10-2016",
       "image_url": "berganza.png",
       "title": "DC Comics editor ",
@@ -394,7 +394,7 @@
     },
     {
       "name": "Andrew Kreisberg",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-10-2019",
       "image_url": "kreisberg.png",
       "title": "TV producer ",
@@ -402,7 +402,7 @@
     },
     {
       "name": "George Takei",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-10-2019",
       "image_url": "takei.png",
       "title": "Star Trek star ",
@@ -410,7 +410,7 @@
     },
     {
       "name": "Gary Goddard",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-10-2019",
       "image_url": "goddard.png",
       "title": "Hollywood director and producer ",
@@ -418,7 +418,7 @@
     },
     {
       "name": "Peter Aalbaek Jensen",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-10-2019",
       "image_url": "jensen.png",
       "title": "Danish film producer ",
@@ -426,7 +426,7 @@
     },
     {
       "name": "Richard Dreyfuss",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-10-2019",
       "image_url": "dreyfuss.png",
       "title": "Hollywood actor ",
@@ -442,7 +442,7 @@
     },
     {
       "name": "Mark Schwahn",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-13-2019",
       "image_url": "schwahn.png",
       "title": "One Tree Hill creator and showrunner ",
@@ -450,7 +450,7 @@
     },
     {
       "name": "Tom Sizemore",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-13-2019",
       "image_url": "sizemore.png",
       "title": "Hollywood actor ",
@@ -466,7 +466,7 @@
     },
     {
       "name": "Andy Henry",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-15-2019",
       "image_url": "henry.png",
       "title": "Casting director ",
@@ -570,7 +570,7 @@
     },
     {
       "name": "Israel Horovitz",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "11-30-2019",
       "image_url": "horovitz.png",
       "title": "Playwright ",
@@ -650,7 +650,7 @@
     },
     {
       "name": "T.J. Miller",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "12-19-2019",
       "image_url": "miller.png",
       "title": "Silicon Valley actor ",
@@ -658,7 +658,7 @@
     },
     {
       "name": "Jordan Vogt-Roberts",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "12-19-2019",
       "image_url": "roberts.png",
       "title": "Director ",
@@ -690,7 +690,7 @@
     },
     {
       "name": "James Franco",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "1-11-2011",
       "image_url": "franco.png",
       "title": "Actor ",
@@ -698,7 +698,7 @@
     },
     {
       "name": "Aziz Ansari",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "1-13-2012",
       "image_url": "ansari.png",
       "title": "Commedian/Actor ",
@@ -706,7 +706,7 @@
     },
     {
       "name": "Michael Douglas",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "1-18-2013",
       "image_url": "douglas.png",
       "title": "Actor",
@@ -777,7 +777,7 @@
     },
     {
       "name": "Vincent Cirrincione",
-      "industry": "Entertainment",
+      "industry": "ISMAR",
       "accuse_date": "2-2-2020",
       "image_url": "cirrincione.png",
       "title": "Hollywood manager",
