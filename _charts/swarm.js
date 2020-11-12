@@ -92,6 +92,27 @@ function initSwarm(){
             .attr("class", "axis y right")
             .attr("transform", "translate(" + width + ", 0)")
             .call(y_axis_right.tickFormat(function(d){ return industries.filter(function(c){ return c.value == d })[0].count; }))
+            .selectAll(".tick line").each(function(d,i){
+                if(d == 'ISMAR')
+                    this.setAttribute('stroke', '#be5039'); 
+                else if(d == 'Media')
+                    this.setAttribute('stroke', '#EDA645'); 
+                else if(d == 'Politics')
+                    this.setAttribute('stroke', '#F8D85E'); 
+                else if(d == 'Business')
+                    this.setAttribute('stroke', '#EDE4C2'); 
+                else if(d == 'Music')
+                    this.setAttribute('stroke', '#7ABA60'); 
+                else if(d == 'Sports')
+                    this.setAttribute('stroke', '#CCE3BF'); 
+                else if(d == 'Tech')
+                    this.setAttribute('stroke', '#4497D7'); 
+                else if(d == 'CHI')
+                    this.setAttribute('stroke', '#ADD299'); 
+                else 
+                    this.setAttribute('stroke', '#7ABA60'); 
+
+            })
             .selectAll(".tick text")
             .attr("dx", radius);
     
@@ -100,6 +121,7 @@ function initSwarm(){
             .attr("transform", "translate(0, " + height + ")")
             .call(x_axis)
             .selectAll(".tick line")
+            .attr('stroke', '#ddd')
             .style("display", function(d){
                 var s = d.toString().split(" ");
                 var m = s[1];
@@ -293,6 +315,52 @@ function sankeyMe(){
     sankeySide.draw(data, options);
 }
 
+function sankMe(){
+    var svg = d3.select("#sankey")
+        .append("svg").attr("width", 200 + margin.left + margin.right).attr("height", height + margin.top + margin.bottom)
+        .append("g").attr("transform", "translate(0,0)");
+
+    var sankey = d3.sankey().nodeWidth(1).nodePadding(20).size([200, height]);
+
+    d3.json("data/sank.json", function(error, graph) {
+
+        sankey.nodes(graph.nodes).links(graph.links).layout(1);
+    
+        var link = svg.append("g").selectAll(".link").data(graph.links).enter().append("path")
+            .attr("class", "link")
+            .attr("d", sankey.link())
+            .style("stroke-width", function(d) { return Math.max(1, d.dy); })
+            .style("stroke", function(d){ 
+                if(d.source.name == 'node1') return '#be5039';
+                else if(d.source.name == 'node2') return '#DE5F42'; 
+                else if(d.source.name == 'node3') return '#EDA645'; 
+                else if(d.source.name == 'node4') return '#F8D85E'; 
+                else if(d.source.name == 'node5') return '#EDE4C2'; 
+                else if(d.source.name == 'node6') return '#CCE3BF'; 
+                else if(d.source.name == 'node7') return '#ADD299'; 
+                else if(d.source.name == 'node0') return '#7ABA60'; 
+                else return '#111';
+            })
+            
+        var node = svg.append("g").selectAll(".node").data(graph.nodes).enter().append("g")
+            .attr("class", "node").attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+            .call(d3.drag().subject(function(d) { return d; })
+            .on("start", function() { this.parentNode.appendChild(this); })
+            .on("drag", dragmove));
+    
+        node.append("rect").attr("height", function(d) { return d.dy; }).attr("width", sankey.nodeWidth())
+       
+      
+        function dragmove(d) {
+            d3.select(this).attr("transform", "translate("+ d.x + "," + (d.y = Math.max(0, Math.min(height - d.dy, d3.event.y))) + ")");
+            sankey.relayout();
+            link.attr("d", sankey.link());
+        }
+    
+    });
+    
+}
+
 function trendSwarm(){
     var data = [
         {"salesperson":"Bob","sales":55},
@@ -302,12 +370,12 @@ function trendSwarm(){
     ];
     data.forEach(function(d) {d.sales = +d.sales;});
     var heights = 60;
-    var widths = 60;
+    var widths = 80;
 
     for(var i = 0; i < 7; i++){
         var mmtop = i>0?20:0;
         var svg = d3.select("#barbar").append("svg")
-                .attr("width", 60)
+                .attr("width", widths)
                 .attr("height", heights)
                 .attr("style", "margin-top:"+mmtop+"px")
                 .append("g").attr("transform", "translate(0,0)");
@@ -320,7 +388,17 @@ function trendSwarm(){
             .data(data)
             .enter().append("rect")
                 .attr("class", "bar")
-                .attr("fill", function(d,i) {return colorHold[Math.floor(Math.random()*colorHold.length)]})
+                .attr("fill", function(d,j) {
+                    if(i == 1) return '#be5039';
+                    else if(i == 2) return '#DE5F42'; 
+                    else if(i == 3) return '#EDA645'; 
+                    else if(i == 4) return '#F8D85E'; 
+                    else if(i == 5) return '#EDE4C2'; 
+                    else if(i == 6) return '#CCE3BF'; 
+                    else if(i == 7) return '#ADD299'; 
+                    else if(i == 0) return '#7ABA60'; 
+                    else return '#111';
+                })
                 .attr("width", function(d) {return x(d.sales); } )
                 .attr("y", function(d) { return y(d.salesperson); })
                 .attr("height", y.bandwidth());
@@ -337,7 +415,8 @@ function trendSwarm(){
             .attr("height", heights);
     }
     
-    google.load('visualization', '1.1', {packages: ['sankey', 'corechart', 'bar']});
-    google.setOnLoadCallback(sankeyMe);
+    // google.load('visualization', '1.1', {packages: ['sankey', 'corechart', 'bar']});
+    // google.setOnLoadCallback(sankeyMe);
+    sankMe();
 }
 

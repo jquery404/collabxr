@@ -50,7 +50,7 @@
                 <ul class="cat_label">
                     <li>Input Type</li> 
                     <li>Device Type</li> 
-                    <li>Interaction (Cue)</li> 
+                    <li>Interaction (Cue)</li>
                     <li>Cue Type</li> 
                     <li>Evaluation Type</li>
                 </ul>
@@ -58,7 +58,6 @@
             <!-- <div id="bar_basic" class="mb-3" style="height: 600px; margin:0 auto;"></div>
             <div id="year_bar_basic" class="mb-3" style="height: 600px; margin:0 auto;"></div> -->
         </div>
-
         <!-- <div class="col-10"><div class="heatmap"></div></div> -->
         <div class="col-10"><div class="streamgraph"></div></div>
         <div class="col-10">
@@ -66,10 +65,10 @@
                 <div class="col-9">
                     <div class="swarm"></div>
                 </div>
-                <div class="col-1 mt-5">
+                <div class="col-1 mt-5 p-0">
                     <div id="barbar" style="height: 550px;"></div>
                 </div>
-                <div class="col-2 mt-5">
+                <div class="col-2 mt-5 p-0">
                     <div id="sankey" style="height: 550px;"></div>
                 </div>
             </div>
@@ -88,11 +87,15 @@
     </footer>
     <iframe id="videoplayer"></iframe>
 </div>
-
+<style>.link {
+    fill: none;
+    stroke-opacity: .7;
+  }</style>
 <script type="text/javascript" src="_charts/sankey.js"></script>
 <script type="text/javascript" src="_charts/heatmap.js"></script>
 <script type="text/javascript" src="_charts/stream.js"></script>
 <script type="text/javascript" src="_charts/swarm.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/holtzy/D3-graph-gallery@master/LIB/sankey.js"></script>
 <script type="text/javascript">
     
     let nowPlaying = false;
