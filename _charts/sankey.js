@@ -4,6 +4,7 @@ var DeviceCat = ['HMD', 'HHD', 'SAR', 'PC'];
 var InteractCat = ['Visual', 'Haptic', 'Auditory'];
 var UICat = ['Pointer', 'Viewframe', 'FoV',	'Glove', 'Gaze', 'Avatar', 'Gesture', 'Voice'];
 var UXCat = ['Decision making', 'Usability', 'Presence', 'Perception', 'Emotion'];
+var swarmJSON = '';
 
 function loadChart(){
     google.load('visualization', '1.1', {packages: ['sankey', 'corechart', 'bar']});
@@ -152,11 +153,36 @@ function loadCSV(){
     Papa.parse('data/lr.csv', config);
 }
 
+function monthNo(m){ 
+    let month = "JanFebMarAprMayJunJulAugSepOctNovDec";
+    let no = month.indexOf(m) / 3 + 1;
+    return no < 10 ? '0'+ no : no;
+}
+
 function parseHTMLTable(results){
     var table = "<table class='table' id='myTable'>";
     var data = results.data;
-    var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f',
-                '#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+    var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f','#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
+    var publisherList = ["CHI", "IEEE VR", "SIGGRAPH", "ISMAR", "CSCW", "VRST", "TVCG", "UIST", "Front Robot AI", "AH"];
+    
+    var swarmData = [];
+    for(var i=0; i<data.length; i++){
+        var row = data[i];
+        var cells = row.join(",").split(",");
+        if(publisherList.includes(cells[13])){
+            swarmData.push({
+                "name": cells[0],
+                "industry": cells[13],
+                "accuse_date": "01-"+monthNo(cells[15])+"-"+cells[14],
+                "image_url": "untitled.png",
+                "title": "",
+                "citation": cells[16]
+            });
+        }
+        
+    }
+
+    swarmJSON = {"include": swarmData};
         
     for(i=0;i<data.length;i++){
         table+= "<tr>";
@@ -192,6 +218,8 @@ function parseHTMLTable(results){
     document.getElementById("parsed_csv_list").innerHTML = table;
 
     loadChart();
+
+    initSwarm();
 }
 
 function buildConfig() {

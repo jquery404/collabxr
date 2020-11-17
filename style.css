@@ -1,6 +1,9 @@
-body{ background-color: #F8F8FB; }
+body{ 
+    font-family: 'Nunito Sans', sans-serif;
+    background-color: #F8F8FB; 
+}
 h1 {
-    font-family: "Chronicle Display","Times Roman","Times New Roman",Georgia,serif;
+    font-family: "Times Roman","Times New Roman",Georgia,serif;
     font-weight: 700;
     line-height: 1.1;
     margin-bottom: 10px;
