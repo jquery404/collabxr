@@ -553,8 +553,12 @@ function trendSwarm(){
     
         node.append("rect").attr("height", (d) => { return d.dy; }).attr("width", sankey.nodeWidth())
 
-        node.append("text").attr("x", -6).attr("y", function(d) { return d.dy / 2; }).attr("dy", ".35em").attr("text-anchor", "end").attr("transform", null)
-            .text(function(d) { return d.name; }).filter(function(d) { return d.x < width / 4; });
+        node.append("text")
+            .attr("x", 5)
+            .attr("y", function(d) { return d.dy / 2; })
+            .attr("dy", ".35em")
+            .attr("text-anchor", "start")
+            .attr("transform", null).text(function(d) { if(['node12', 'node13', 'node14', 'node15', 'node16', 'node17'].includes(d.name)) return d.name; });
        
       
         function dragmove(d) {

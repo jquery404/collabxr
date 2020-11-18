@@ -61,3 +61,42 @@ span.round { border-radius: 50%;color: #fff;text-align: center;background: #000;
 
 .domain{ stroke: #726D6E; }
 .link { fill: none; stroke-opacity: 1; }
+
+#cs{
+    background : #BE5039;
+    background : #DE5F42;
+    background : #EDA645;
+    background : #F8D85E;
+    background : #EDE4C2;
+    background : #CCE3BF;
+    background : #ADD299;
+    background : #7ABA60;
+    background : #4497D7;
+
+    background : #E76469;
+    background : #EB8A9F;
+    background : #F1B1C3;
+    background : #EEA66E;
+    background : #EE7786;
+    background : #F2A09C;
+    background : #D1B0B3;
+    background : #8C99A6;
+    background : #3B7F9F;
+    background : #4FA490;
+    background : #63B4B1;
+    background : #F2AF88;
+    background : #FCEBE5;
+}
+
+.d{
+    background : #BE5039;
+    background : #E76469;
+    background : #F1B1C3;
+    background : #EDA645;
+    background : #F8D85E;
+    background : #D1B0B3;
+    background : #8C99A6;
+    background : #ADD299;
+    background : #4FA490;
+    background : #3B7F9F;
+}
