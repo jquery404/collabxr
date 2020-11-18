@@ -1,16 +1,4 @@
 const radius = 5;
-const colorHolder = [
-    '#BE5039',
-    '#E76469',
-    '#F1B1C3',
-    '#EDA645',
-    '#F8D85E',
-    '#D1B0B3',
-    '#8C99A6',
-    '#ADD299',
-    '#4FA490',
-    '#3B7F9F',
-];
 
 var svgMargin = {top: radius * 2.5 + 10, left: 90, bottom: 12, right: 30};
 var swarm_width = +jz.str.keepNumber(d3.select(".swarm").style("width")) - svgMargin.left - svgMargin.right;
@@ -466,12 +454,12 @@ function initSwarm(){
 
     window.addEventListener("resize", function(){ 
         // all of these things need to be updated on resize
-        swarm_width = +jz.str.keepNumber(d3.select(".swarm").style("width")) - svgMargin.left - svgMargin.right;
-        d3.select(".axis.y.right").attr("transform", "translate(" + swarm_width + ", 0)").call(y_axis_right.tickSizeInner(-swarm_width));
-        x.rangeRound([0, swarm_width]);
-        forceSim();
-        d3.select(".x.axis").call(x_axis);
-        drawSwarmCircle(); 
+        // swarm_width = +jz.str.keepNumber(d3.select(".swarm").style("width")) - svgMargin.left - svgMargin.right;
+        // d3.select(".axis.y.right").attr("transform", "translate(" + swarm_width + ", 0)").call(y_axis_right.tickSizeInner(-swarm_width));
+        // x.rangeRound([0, swarm_width]);
+        // forceSim();
+        // d3.select(".x.axis").call(x_axis);
+        // drawSwarmCircle(); 
     });
 
     function drawSwarmCircle(){
@@ -488,7 +476,7 @@ function initSwarm(){
                 .attr("cx", function(d) { if(d) return d ? d.data.x : null; })
                 .attr("cy", function(d) { if(d) return d ? d.data.y : null; });
 
-        // // hover
+        // hover
         var hover_circle = svg.selectAll(".circle-hover").data(v.polygons(data), function(d){ return d.data.slug; });
 
         hover_circle.enter().append("circle")
@@ -508,12 +496,13 @@ function initSwarm(){
             var tip_width = +jz.str.keepNumber(tip.style("width"));
             var tip_height = +jz.str.keepNumber(tip.style("height"));
 
-            var circle_node = d3.select(this).node().getBoundingClientRect();console.log(circle_node);
-            var circle_left = circle_node.left;
-            var circle_top = circle_node.top;
+            var circle_node = d3.select(this).node().getBoundingClientRect();
+            var circle_left = circle_node.left - 150;
+            var circle_top = circle_node.top - 150;
 
             var tip_left = circle_left;
             var tip_top = circle_top;
+            console.log(circle_node);
 
             tip.style("left", tip_left + "px").style("top", tip_top + "px");
 
@@ -563,6 +552,9 @@ function trendSwarm(){
             .on("drag", dragmove));
     
         node.append("rect").attr("height", (d) => { return d.dy; }).attr("width", sankey.nodeWidth())
+
+        node.append("text").attr("x", -6).attr("y", function(d) { return d.dy / 2; }).attr("dy", ".35em").attr("text-anchor", "end").attr("transform", null)
+            .text(function(d) { return d.name; }).filter(function(d) { return d.x < width / 4; });
        
       
         function dragmove(d) {
@@ -576,44 +568,44 @@ function trendSwarm(){
 }
 
 function setTickColor(that, d){
-    if(d == 'ISMAR') that.setAttribute('stroke', colorHolder[0]); 
-    else if(d == 'CSCW') that.setAttribute('stroke', colorHolder[1]); 
-    else if(d == 'VRST') that.setAttribute('stroke', colorHolder[2]); 
-    else if(d == 'TVCG') that.setAttribute('stroke', colorHolder[3]); 
-    else if(d == 'UIST') that.setAttribute('stroke', colorHolder[4]); 
-    else if(d == 'Front Robot AI') that.setAttribute('stroke', colorHolder[5]); 
-    else if(d == 'AH') that.setAttribute('stroke', colorHolder[6]); 
-    else if(d == 'CHI') that.setAttribute('stroke', colorHolder[7]); 
-    else if(d == 'SIGGRAPH') that.setAttribute('stroke', colorHolder[8]); 
-    else if(d == 'IEEEVR') that.setAttribute('stroke', colorHolder[9]); 
-    else that.setAttribute('stroke', colorHolder[8]); 
+    if(d == 'ISMAR')                that.setAttribute('stroke', colorHolder[0]); 
+    else if(d == 'CSCW')            that.setAttribute('stroke', colorHolder[1]); 
+    else if(d == 'VRST')            that.setAttribute('stroke', colorHolder[2]); 
+    else if(d == 'TVCG')            that.setAttribute('stroke', colorHolder[3]); 
+    else if(d == 'UIST')            that.setAttribute('stroke', colorHolder[4]); 
+    else if(d == 'Front Robot AI')  that.setAttribute('stroke', colorHolder[5]); 
+    else if(d == 'AH')              that.setAttribute('stroke', colorHolder[6]); 
+    else if(d == 'CHI')             that.setAttribute('stroke', colorHolder[7]); 
+    else if(d == 'SIGGRAPH')        that.setAttribute('stroke', colorHolder[8]); 
+    else if(d == 'IEEEVR')          that.setAttribute('stroke', colorHolder[9]); 
+    else                            that.setAttribute('stroke', colorHolder[8]); 
 }
 
 
 function setNodeColor(d){
-    if(d == 'node0') return colorHolder[0];
-    else if(d == 'node1') return colorHolder[1];
-    else if(d == 'node2') return colorHolder[2]; 
-    else if(d == 'node3') return colorHolder[3]; 
-    else if(d == 'node4') return colorHolder[4]; 
-    else if(d == 'node5') return colorHolder[5];
-    else if(d == 'node6') return colorHolder[6];
-    else if(d == 'node7') return colorHolder[7];
-    else return colorHolder[8];
+    if(d == 'node0')        return colorHolder[0];
+    else if(d == 'node1')   return colorHolder[1];
+    else if(d == 'node2')   return colorHolder[2]; 
+    else if(d == 'node3')   return colorHolder[3]; 
+    else if(d == 'node4')   return colorHolder[4]; 
+    else if(d == 'node5')   return colorHolder[5];
+    else if(d == 'node6')   return colorHolder[6];
+    else if(d == 'node7')   return colorHolder[7];
+    else                    return colorHolder[8];
 }
 
 function setBarColor(d){
-    if(d == 0) return colorHolder[0];
-    else if(d == 1) return colorHolder[1];
-    else if(d == 2) return colorHolder[2]; 
-    else if(d == 3) return colorHolder[3]; 
-    else if(d == 4) return colorHolder[4]; 
-    else if(d == 5) return colorHolder[5];
-    else if(d == 6) return colorHolder[6];
-    else if(d == 7) return colorHolder[7];
-    else if(d == 8) return colorHolder[8];
-    else if(d == 9) return colorHolder[9];
-    else return colorHolder[8];
+    if(d == 0)              return colorHolder[0];
+    else if(d == 1)         return colorHolder[1];
+    else if(d == 2)         return colorHolder[2]; 
+    else if(d == 3)         return colorHolder[3]; 
+    else if(d == 4)         return colorHolder[4]; 
+    else if(d == 5)         return colorHolder[5];
+    else if(d == 6)         return colorHolder[6];
+    else if(d == 7)         return colorHolder[7];
+    else if(d == 8)         return colorHolder[8];
+    else if(d == 9)         return colorHolder[9];
+    else                    return colorHolder[8];
 }
 
 function playwithColor(dt){
@@ -621,15 +613,15 @@ function playwithColor(dt){
     let op = '' //  ((dt.index/max)*255);
     console.log(op);
 
-    if(dt.industry == 'ISMAR') return colorHolder[0] + op; 
-    else if(dt.industry == 'CSCW') return colorHolder[1] + op; 
-    else if(dt.industry == 'VRST') return colorHolder[2] + op; 
-    else if(dt.industry == 'TVCG') return colorHolder[3] + op; 
-    else if(dt.industry == 'UIST') return colorHolder[4] + op; 
-    else if(dt.industry == 'Front Robot AI') return colorHolder[5] + op; 
-    else if(dt.industry == 'AH') return colorHolder[6] + op; 
-    else if(dt.industry == 'CHI') return  colorHolder[7] + op; 
-    else if(dt.industry == 'SIGGRAPH') return colorHolder[8] + op; 
-    else if(dt.industry == 'IEEEVR') return colorHolder[9] + op; 
-    else return colorHolder[9]; 
+    if(dt.industry == 'ISMAR')                  return colorHolder[0] + op; 
+    else if(dt.industry == 'CSCW')              return colorHolder[1] + op; 
+    else if(dt.industry == 'VRST')              return colorHolder[2] + op; 
+    else if(dt.industry == 'TVCG')              return colorHolder[3] + op; 
+    else if(dt.industry == 'UIST')              return colorHolder[4] + op; 
+    else if(dt.industry == 'Front Robot AI')    return colorHolder[5] + op; 
+    else if(dt.industry == 'AH')                return colorHolder[6] + op; 
+    else if(dt.industry == 'CHI')               return colorHolder[7] + op; 
+    else if(dt.industry == 'SIGGRAPH')          return colorHolder[8] + op; 
+    else if(dt.industry == 'IEEEVR')            return colorHolder[9] + op; 
+    else                                        return colorHolder[9] + op; 
 }

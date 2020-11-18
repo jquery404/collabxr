@@ -1,3 +1,16 @@
+const colorHolder = [
+    '#BE5039',
+    '#E76469',
+    '#F1B1C3',
+    '#EDA645',
+    '#F8D85E',
+    '#D1B0B3',
+    '#8C99A6',
+    '#ADD299',
+    '#4FA490',
+    '#3B7F9F',
+];
+
 const barbarData = {
     "0": [
         {"salesperson":"Bob","sales":55},

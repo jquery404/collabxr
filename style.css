@@ -53,5 +53,11 @@ span.round { border-radius: 50%;color: #fff;text-align: center;background: #000;
     position: absolute;
     font-size: .8em;
     text-align: center;
+    width: 150px;
+    z-index: 100;
+    background: rgb(233, 236, 239);
     text-shadow: -1px -1px 1px #ffffff, -1px 0px 1px #ffffff, -1px 1px 1px #ffffff, 0px -1px 1px #ffffff, 0px 1px 1px #ffffff, 1px -1px 1px #ffffff, 1px 0px 1px #ffffff, 1px 1px 1px #ffffff;
-  }
+}
+
+.domain{ stroke: #726D6E; }
+.link { fill: none; stroke-opacity: 1; }
