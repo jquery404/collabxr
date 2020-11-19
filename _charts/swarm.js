@@ -24,19 +24,26 @@ for(var i = 0; i < 10; i++){
             .attr("height", barbar_height)
             .attr("style", "margin-top:"+margin_top+"px")
             .append("g").attr("transform", "translate(0,0)");
-    var y = d3.scaleBand().range([barbar_height, 0]).padding(0.1);
+    var y = d3.scaleBand().range([barbar_height, 0]).padding(0.2);
     var x = d3.scaleLinear().range([0, barbar_width]);
-    x.domain([0, d3.max(barbarData[i], ((d) => { return d.sales }))])
-    y.domain(barbarData[i].map((d) => { return d.salesperson; }));
+    x.domain([0, d3.max(barbarData[i], ((d) => { return d.amount }))])
+    y.domain(barbarData[i].map((d) => { return d.type; }));
 
     svg_barbar.selectAll(".bar")
-        .data(barbarData[i])
-        .enter().append("rect")
-            .attr("class", "bar")
-            .attr("fill", (d,j) => { return setBarColor(i) })
-            .attr("width", (d) => {return x(d.sales); } )
-            .attr("y", (d) => { return y(d.salesperson); })
-            .attr("height", y.bandwidth());
+        .data(barbarData[i]).enter().append("rect")
+        .attr("class", "bar-back")
+        .attr("width", (d) => {return barbar_width; } )
+        .attr("y", (d) => { return y(d.type)+3; })
+        .attr("fill", (d,j) => { return '#171718' })
+        .attr("height", 0.5);
+
+    svg_barbar.selectAll(".bar")
+        .data(barbarData[i]).enter().append("rect")
+        .attr("class", "bar")
+        .attr("fill", (d,j) => { return setBarColor(i) })
+        .attr("width", (d) => {return x(d.amount); } )
+        .attr("y", (d) => { return y(d.type); })
+        .attr("height", y.bandwidth());
 
     svg_barbar.append("g").attr("transform", "translate(0," + barbar_height + ")").call(d3.axisBottom(x));
 
@@ -497,12 +504,12 @@ function initSwarm(){
             var tip_height = +jz.str.keepNumber(tip.style("height"));
 
             var circle_node = d3.select(this).node().getBoundingClientRect();
-            var circle_left = circle_node.left - 150;
-            var circle_top = circle_node.top - 150;
+            var circle_left = circle_node.left - tip_width + 10;
+            var circle_top = circle_node.top - 2*tip_height;
 
             var tip_left = circle_left;
             var tip_top = circle_top;
-            console.log(circle_node);
+            //console.log(circle_node);
 
             tip.style("left", tip_left + "px").style("top", tip_top + "px");
 
@@ -558,7 +565,7 @@ function trendSwarm(){
             .attr("y", function(d) { return d.dy / 2; })
             .attr("dy", ".35em")
             .attr("text-anchor", "start")
-            .attr("transform", null).text(function(d) { if(['node12', 'node13', 'node14', 'node15', 'node16', 'node17'].includes(d.name)) return d.name; });
+            .attr("transform", null).text(function(d) { if(paperTrends.includes(d.name)) return d.name; });
        
       
         function dragmove(d) {
@@ -572,60 +579,29 @@ function trendSwarm(){
 }
 
 function setTickColor(that, d){
-    if(d == 'ISMAR')                that.setAttribute('stroke', colorHolder[0]); 
-    else if(d == 'CSCW')            that.setAttribute('stroke', colorHolder[1]); 
-    else if(d == 'VRST')            that.setAttribute('stroke', colorHolder[2]); 
-    else if(d == 'TVCG')            that.setAttribute('stroke', colorHolder[3]); 
-    else if(d == 'UIST')            that.setAttribute('stroke', colorHolder[4]); 
-    else if(d == 'Front Robot AI')  that.setAttribute('stroke', colorHolder[5]); 
-    else if(d == 'AH')              that.setAttribute('stroke', colorHolder[6]); 
-    else if(d == 'CHI')             that.setAttribute('stroke', colorHolder[7]); 
-    else if(d == 'SIGGRAPH')        that.setAttribute('stroke', colorHolder[8]); 
-    else if(d == 'IEEEVR')          that.setAttribute('stroke', colorHolder[9]); 
-    else                            that.setAttribute('stroke', colorHolder[8]); 
+    if(publisherList.includes(d))                
+        that.setAttribute('stroke', colorHolder[publisherList.indexOf(d)]);
+    else
+        that.setAttribute('stroke', colorHolder[8]);
 }
 
 
 function setNodeColor(d){
-    if(d == 'node0')        return colorHolder[0];
-    else if(d == 'node1')   return colorHolder[1];
-    else if(d == 'node2')   return colorHolder[2]; 
-    else if(d == 'node3')   return colorHolder[3]; 
-    else if(d == 'node4')   return colorHolder[4]; 
-    else if(d == 'node5')   return colorHolder[5];
-    else if(d == 'node6')   return colorHolder[6];
-    else if(d == 'node7')   return colorHolder[7];
-    else                    return colorHolder[8];
+    if(publisherList.includes(d)) 
+        return colorHolder[publisherList.indexOf(d)];
+    else
+        return colorHolder[0];
 }
 
-function setBarColor(d){
-    if(d == 0)              return colorHolder[0];
-    else if(d == 1)         return colorHolder[1];
-    else if(d == 2)         return colorHolder[2]; 
-    else if(d == 3)         return colorHolder[3]; 
-    else if(d == 4)         return colorHolder[4]; 
-    else if(d == 5)         return colorHolder[5];
-    else if(d == 6)         return colorHolder[6];
-    else if(d == 7)         return colorHolder[7];
-    else if(d == 8)         return colorHolder[8];
-    else if(d == 9)         return colorHolder[9];
-    else                    return colorHolder[8];
-}
+function setBarColor(d){ return colorHolder[d]; }
 
 function playwithColor(dt){
     let max = 56;
     let op = '' //  ((dt.index/max)*255);
     console.log(op);
 
-    if(dt.industry == 'ISMAR')                  return colorHolder[0] + op; 
-    else if(dt.industry == 'CSCW')              return colorHolder[1] + op; 
-    else if(dt.industry == 'VRST')              return colorHolder[2] + op; 
-    else if(dt.industry == 'TVCG')              return colorHolder[3] + op; 
-    else if(dt.industry == 'UIST')              return colorHolder[4] + op; 
-    else if(dt.industry == 'Front Robot AI')    return colorHolder[5] + op; 
-    else if(dt.industry == 'AH')                return colorHolder[6] + op; 
-    else if(dt.industry == 'CHI')               return colorHolder[7] + op; 
-    else if(dt.industry == 'SIGGRAPH')          return colorHolder[8] + op; 
-    else if(dt.industry == 'IEEEVR')            return colorHolder[9] + op; 
-    else                                        return colorHolder[9] + op; 
+    if(publisherList.includes(dt.industry))                  
+        return colorHolder[publisherList.indexOf(dt.industry)] + op; 
+    else  
+        return colorHolder[9] + op; 
 }

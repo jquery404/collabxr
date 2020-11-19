@@ -1,13 +1,15 @@
 {
 "nodes":[
-    {"node":0,"name":"node0"},
-    {"node":1,"name":"node1"},
-    {"node":2,"name":"node2"},
-    {"node":3,"name":"node3"},
-    {"node":4,"name":"node4"}, 
-    {"node":5,"name":"node5"}, 
-    {"node":6,"name":"node6"}, 
-    {"node":7,"name":"node7"}, 
+    {"node":0,"name":"CHI"},
+    {"node":1,"name":"IEEE VR"},
+    {"node":2,"name":"SIGGRAPH"},
+    {"node":3,"name":"ISMAR"},
+    {"node":4,"name":"CSCW"}, 
+    {"node":5,"name":"VRST"}, 
+    {"node":6,"name":"TVCG"}, 
+    {"node":7,"name":"UIST"}, 
+    {"node":8,"name":"Front Robot AI"}, 
+    {"node":9,"name":"AH"}, 
     {"node":10,"name":"node10"},
     {"node":11,"name":"Training"},
     {"node":12,"name":"Immersive"},
@@ -20,7 +22,6 @@
 "links":[
     {"source":0,"target":10,"value":2},
     {"source":0,"target":11,"value":3},
-    {"source":0,"target":12,"value":3},
 
     {"source":1,"target":10,"value":2},
     {"source":1,"target":11,"value":3},
@@ -46,6 +47,21 @@
     {"source":6,"target":10,"value":2},
     {"source":6,"target":11,"value":3},
     {"source":6,"target":14,"value":2},
-    {"source":6,"target":15,"value":3}
+    {"source":6,"target":15,"value":3},
+
+    {"source":7,"target":10,"value":2},
+    {"source":7,"target":11,"value":3},
+    {"source":7,"target":14,"value":2},
+    {"source":7,"target":15,"value":3},
+
+    {"source":8,"target":10,"value":2},
+    {"source":8,"target":11,"value":3},
+    {"source":8,"target":14,"value":2},
+    {"source":8,"target":15,"value":3},
+
+    {"source":9,"target":10,"value":2},
+    {"source":9,"target":11,"value":3},
+    {"source":9,"target":14,"value":2},
+    {"source":9,"target":15,"value":3}
 
 ]}
