@@ -9,12 +9,12 @@
     {"node":6,"name":"node6"}, 
     {"node":7,"name":"node7"}, 
     {"node":10,"name":"node10"},
-    {"node":11,"name":"node11"},
-    {"node":12,"name":"node12"},
-    {"node":13,"name":"node13"},
-    {"node":14,"name":"node14"}, 
-    {"node":15,"name":"node15"}, 
-    {"node":16,"name":"node16"}, 
+    {"node":11,"name":"Training"},
+    {"node":12,"name":"Immersive"},
+    {"node":13,"name":"proof-of-concept"},
+    {"node":14,"name":"communication/collaboration"}, 
+    {"node":15,"name":"engineering"}, 
+    {"node":16,"name":"collaborative"}, 
     {"node":17,"name":"node17"}
 ],
 "links":[
