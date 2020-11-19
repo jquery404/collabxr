@@ -28,7 +28,7 @@ const paperTrends = [
     'Training',
     'Immersive',
     'proof-of-concept',
-    'communication/collaboration',
+    'communication',
     'engineering', 
     'collaborative',
 ];

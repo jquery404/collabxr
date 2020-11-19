@@ -2,7 +2,7 @@ const radius = 5;
 
 var svgMargin = {top: radius * 2.5 + 10, left: 90, bottom: 12, right: 30};
 var swarm_width = +jz.str.keepNumber(d3.select(".swarm").style("width")) - svgMargin.left - svgMargin.right;
-var sank_width = +jz.str.keepNumber(d3.select("#sankey").style("width"));
+var sank_width = +jz.str.keepNumber(d3.select("#sankey").style("width"))*.6;
 var barbar_width = +jz.str.keepNumber(d3.select("#barbar").style("width"));
 var swarm_height = 600 - svgMargin.top - svgMargin.bottom;
 var barbar_height = 40;
@@ -15,6 +15,7 @@ var svg = d3.select(".swarm").append("svg")
 var svg_sank = d3.select("#sankey").append("svg")
             .attr("width", sank_width + svgMargin.left + svgMargin.right)
             .attr("height", swarm_height + svgMargin.top + svgMargin.bottom)
+            .attr("style", "margin-top:"+30+"px")
             .append("g") .attr("transform", "translate(0,0)");
 
 for(var i = 0; i < 10; i++){
@@ -564,6 +565,7 @@ function trendSwarm(){
             .attr("x", 5)
             .attr("y", function(d) { return d.dy / 2; })
             .attr("dy", ".35em")
+            .style('font-size', '10px')
             .attr("text-anchor", "start")
             .attr("transform", null).text(function(d) { if(paperTrends.includes(d.name)) return d.name; });
        
