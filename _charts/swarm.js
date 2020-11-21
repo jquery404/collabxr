@@ -7,6 +7,7 @@ var barbar_width = +jz.str.keepNumber(d3.select("#barbar").style("width"));
 var swarm_height = 600 - svgMargin.top - svgMargin.bottom;
 var barbar_height = 40;
 
+
 var svg = d3.select(".swarm").append("svg")
         .attr("width", swarm_width + svgMargin.left + svgMargin.right)
         .attr("height", swarm_height + svgMargin.top + svgMargin.bottom)
@@ -505,12 +506,11 @@ function initSwarm(){
             var tip_height = +jz.str.keepNumber(tip.style("height"));
 
             var circle_node = d3.select(this).node().getBoundingClientRect();
-            var circle_left = circle_node.left - tip_width + 10;
-            var circle_top = circle_node.top - 2*tip_height;
+            var circle_left = circle_node.left - tip_width/2;
+            var circle_top = circle_node.top - tip_height/2 + 10;
 
             var tip_left = circle_left;
             var tip_top = circle_top;
-            //console.log(circle_node);
 
             tip.style("left", tip_left + "px").style("top", tip_top + "px");
 
@@ -597,13 +597,34 @@ function setNodeColor(d){
 
 function setBarColor(d){ return colorHolder[d]; }
 
+function ColorLuminance(hex, lum) {
+	hex = String(hex).replace(/[^0-9a-f]/gi, '');
+	if (hex.length < 6) {
+		hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+	}
+	lum = lum || 0;
+
+	var rgb = "#", c, i;
+	for (i = 0; i < 3; i++) {
+		c = parseInt(hex.substr(i*2,2), 16);
+		c = Math.round(Math.min(Math.max(0, c + (c * lum)), 255)).toString(16);
+		rgb += ("00"+c).substr(c.length);
+	}
+
+	return rgb;
+}
+
+
+
 function playwithColor(dt){
-    let max = 56;
-    let op = '' //  ((dt.index/max)*255);
-    console.log(op);
+    let max = citationList[dt.industry];
+    let nums = [0, -0.1, -0.15, -0.25, -0.3, -0.4, -0.45, -0.5, -0.55, -0.6];
+    let published = new Date(dt.accuse_date).getFullYear(),
+        year_elaspsed = today - published, 
+        cit = year_elaspsed > 0 ? Math.floor(parseInt(dt.citation)/year_elaspsed) : 0; 
 
     if(publisherList.includes(dt.industry))                  
-        return colorHolder[publisherList.indexOf(dt.industry)] + op; 
+        return ColorLuminance(colorHolder[publisherList.indexOf(dt.industry)], nums[Math.floor(cit/max*10)]); 
     else  
         return colorHolder[9] + op; 
 }

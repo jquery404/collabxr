@@ -5,6 +5,19 @@ var InteractCat = ['Visual', 'Haptic', 'Auditory'];
 var UICat = ['Pointer', 'Viewframe', 'FoV',	'Glove', 'Gaze', 'Avatar', 'Gesture', 'Voice'];
 var UXCat = ['Decision making', 'Usability', 'Presence', 'Perception', 'Emotion'];
 var swarmJSON = '';
+var citationList = [
+    {pub: publisherList[0], max: 0},
+    {pub: publisherList[1], max: 0},
+    {pub: publisherList[2], max: 0},
+    {pub: publisherList[3], max: 0},
+    {pub: publisherList[4], max: 0},
+    {pub: publisherList[5], max: 0},
+    {pub: publisherList[6], max: 0},
+    {pub: publisherList[7], max: 0},
+    {pub: publisherList[8], max: 0},
+    {pub: publisherList[9], max: 0},
+];
+citationList.forEach((v) => { citationList[v.pub] = v.max });
 
 function loadChart(){
     google.load('visualization', '1.1', {packages: ['sankey', 'corechart', 'bar']});
@@ -169,6 +182,9 @@ function parseHTMLTable(results){
         var row = data[i];
         var cells = row.join(",").split(",");
         if(publisherList.includes(cells[13])){
+            let year_elaspsed = today - parseInt(cells[14]), 
+                cit = year_elaspsed > 0 ? Math.floor(parseInt(cells[16])/year_elaspsed) : 0;
+            citationList[cells[13]] = citationList[cells[13]] < cit ? cit : citationList[cells[13]];
             swarmData.push({
                 "name": cells[0],
                 "industry": cells[13],
@@ -178,9 +194,7 @@ function parseHTMLTable(results){
                 "citation": cells[16]
             });
         }
-        
     }
-
     swarmJSON = {"include": swarmData};
         
     for(i=0;i<data.length;i++){

@@ -96,3 +96,4 @@ const barbarData = {
     ],
 };
 
+const today = new Date().getFullYear();
