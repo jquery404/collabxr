@@ -10,14 +10,14 @@
     {"node":7,"name":"UIST"}, 
     {"node":8,"name":"Front Robot AI"}, 
     {"node":9,"name":"AH"}, 
-    {"node":10,"name":"node10"},
-    {"node":11,"name":"Training"},
-    {"node":12,"name":"Immersive"},
-    {"node":13,"name":"proof-of-concept"},
-    {"node":14,"name":"communication/collaboration"}, 
-    {"node":15,"name":"engineering"}, 
-    {"node":16,"name":"collaborative"}, 
-    {"node":17,"name":"node17"}
+    {"node":10,"name":"teleoperation"},
+    {"node":11,"name":"healthcare"},
+    {"node":12,"name":"immersive learning"},
+    {"node":13,"name":"social interaction"},
+    {"node":14,"name":"collaborative interaction"}, 
+    {"node":15,"name":"collaborative design"}, 
+    {"node":16,"name":"immersive visualization"}, 
+    {"node":17,"name":"immersive collaboration"}
 ],
 "links":[
     {"source":0,"target":10,"value":2},

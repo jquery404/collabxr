@@ -204,24 +204,21 @@ function parseHTMLTable(results){
             
         for(j=0;j<cells.length;j++){
             if(i==0){
-                if (j==0) table+= "<th>No</th>";
-                table+= "<th>"+cells[j]+"</th>";
+                if (j==0) table+= "<th>No</th><th>Title</th>";
+                else if(j==0 || j==1 || j==2|| j==4 || j==5 || j==6 || j==10 || j==11 || j==12) table+= "<th>"+cells[j]+"</th>";
                 if (j==cells.length-1) table+="<th>Contrib</th>";
             }else{
-                // if (j==cells.length-1){
-                //     table+= "<td>";
-                //     table+= (cells[j] == 1) ? "<img class='img-thumbnail' src='gfx/"+cells[0].toLowerCase()+".jpg'/>" : ""; 
-                //     table+= "</td>";
-                // }else{
-                    if (j==0) table+= "<td>"+i+"</td>";
-                    
-                    if(j==12 && cells[j]!=='') 
-                        table+= `<td><span class="videourl" onmouseover="playVideoPreview(this)" onmouseout="stopVideoPreview(this)">${cells[j]}</b></td>`;
-                    else table+= "<td>" + cells[j] + "</td>";
+                
+                if (j==0) table+= "<td>"+i+"</td>";
+                
+                if (j==cells.length-1) table+="<td><span class='round' style='background: "+colors[Math.floor(Math.random()*colors.length)]+"';>"+makeid(1)+"</span></td>";
 
-                    if (j==cells.length-1) table+="<td><span class='round' style='background: "+colors[Math.floor(Math.random()*colors.length)]+"';>"+makeid(1)+"</span></td>";
+                if(j==12 && cells[j]!=='') 
+                    table+= `<td><span class="videourl" onmouseover="playVideoPreview(this)" onmouseout="stopVideoPreview(this)">${cells[j]}</b></td>`;
+                else if(j==0 || j==1 || j==2|| j==4 || j==5 || j==6 || j==10 || j==11 || j==12) 
+                    table+= "<td>" + cells[j] + "</td>";
 
-                // }
+                
             }
             
         }

@@ -41,17 +41,23 @@ for(var i = 0; i < 10; i++){
 
     svg_barbar.selectAll(".bar")
         .data(barbarData[i]).enter().append("rect")
-        .attr("class", "bar")
+        .attr("class", (d, j) => { return "bar_"})
         .attr("fill", (d,j) => { return setBarColor(i) })
         .attr("width", (d) => {return x(d.amount); } )
         .attr("y", (d) => { return y(d.type); })
         .attr("height", y.bandwidth());
+    
+    svg_barbar.selectAll(".bar_").sort(function(a, b) {
+        // console.log(a.type, b.type);
+        return d3.descending(a.type, b.type)
+    })
 
     svg_barbar.append("g").attr("transform", "translate(0," + barbar_height + ")").call(d3.axisBottom(x));
 
     svg_barbar.append("g").call(d3.axisLeft(y));
   
     svg_barbar.append("rect").attr("x", barbar_width-1).attr("y", 0).attr("width", 1).attr("height", barbar_height);
+    
 }
 
 d3.sankey = function() {
@@ -542,41 +548,50 @@ function initSwarm(){
 /* sankey and barbar */
 function trendSwarm(){
 
-    d3.json("data/sank.json", function(error, graph) {
-        console.log(sank_width)
-        var sankey = d3.sankey().nodeWidth(1).nodePadding(20).size([sank_width, swarm_height]);
-        sankey.nodes(graph.nodes).links(graph.links).layout(1);
-    
-        var link = svg_sank.append("g").selectAll(".link").data(graph.links).enter().append("path")
-            .attr("class", "link")
-            .attr("d", sankey.link())
-            .style("stroke-width", (d) => { return Math.max(1, d.dy); })
-            .style("stroke", (d) => { return setNodeColor(d.source.name); })
-            
-        var node = svg_sank.append("g").selectAll(".node").data(graph.nodes).enter().append("g")
-            .attr("class", "node").attr("transform", (d) => { return "translate(" + d.x + "," + d.y + ")"; })
-            .call(d3.drag().subject((d) => { return d; })
-            .on("start", () => { this.parentNode.appendChild(this); })
-            .on("drag", dragmove));
-    
-        node.append("rect").attr("height", (d) => { return d.dy; }).attr("width", sankey.nodeWidth())
+    var sankey = d3.sankey().nodeWidth(1).nodePadding(20).size([sank_width, swarm_height]);
+    sankey.nodes(sankApp.nodes).links(sankApp.links).layout(1);
 
-        node.append("text")
-            .attr("x", 5)
-            .attr("y", function(d) { return d.dy / 2; })
-            .attr("dy", ".35em")
-            .style('font-size', '10px')
-            .attr("text-anchor", "start")
-            .attr("transform", null).text(function(d) { if(paperTrends.includes(d.name)) return d.name; });
-       
-      
-        function dragmove(d) {
-            d3.select(this).attr("transform", "translate("+ d.x + "," + (d.y = Math.max(0, Math.min(swarm_height - d.dy, d3.event.y))) + ")");
-            sankey.relayout();
-            link.attr("d", sankey.link());
-        }
+    var link = svg_sank.append("g").selectAll(".link").data(sankApp.links).enter().append("path")
+        .attr("class", "link")
+        .attr("d", sankey.link())
+        .style("stroke-width", (d) => { return Math.max(1, d.dy); })
+        .style("stroke", (d) => { return setNodeColor(d.source.name); })
+        
+    var node = svg_sank.append("g").selectAll(".node").data(sankApp.nodes).enter().append("g")
+        .attr("class", "node").attr("transform", (d) => { return "translate(" + d.x + "," + d.y + ")"; })
+        .call(d3.drag().subject((d) => { return d; })
+        .on("start", () => { this.parentNode.appendChild(this); })
+        .on("drag", dragmove));
+
+    node.append("rect").attr("height", (d) => { return d.dy; }).attr("width", sankey.nodeWidth())
+
+    node.append("text")
+        .attr("x", 5)
+        .attr("y", function(d) { return d.dy / 2; })
+        .attr("dy", ".35em")
+        .style("font-size", "10px").style("font-style", "italic")
+        .attr("text-anchor", "start")
+        .attr("transform", null)
+        .each(function(d) {
+            if(paperTrends.includes(d.name)){
+                let str = d.name.split('\n');
+                let text = d3.select(this)
+                    .attr("dy", str.length / 3 - (str.length-1) * 1 + 'em')
+                    .text(str[0]);
+                for (var i = 1; i < str.length; i++) {
+                    text.append("tspan").attr('x', 5).attr('dy', '1em').text(str[i])
+                }
+            }
+        });
+        
+
+    function dragmove(d) {
+        d3.select(this).attr("transform", "translate("+ d.x + "," + (d.y = Math.max(0, Math.min(swarm_height - d.dy, d3.event.y))) + ")");
+        sankey.relayout();
+        link.attr("d", sankey.link());
+    }
     
-    });
+
     
 }
 

@@ -48,7 +48,7 @@ span.round { border-radius: 50%;color: #fff;text-align: center;background: #000;
     font-weight: 600;
     cursor: pointer;
 }
-#videoplayer { position: absolute;top: 0;left: 0;display: none;}
+#videoplayer { position: absolute;top: 0;left: 0;display: none;border: none; background-color: #726D6E;}
 .tip {
     position: absolute;
     font-size: .8em;
@@ -58,10 +58,12 @@ span.round { border-radius: 50%;color: #fff;text-align: center;background: #000;
     background: rgb(233, 236, 239);
     text-shadow: -1px -1px 1px #ffffff, -1px 0px 1px #ffffff, -1px 1px 1px #ffffff, 0px -1px 1px #ffffff, 0px 1px 1px #ffffff, 1px -1px 1px #ffffff, 1px 0px 1px #ffffff, 1px 1px 1px #ffffff;
 }
-
 .domain{ stroke: #726D6E; }
 .link { fill: none; stroke-opacity: 1; }
-
+footer {
+    font-size: 14px;
+    background-color: #f3f3f3;
+}
 #cs{
     background : #BE5039;
     background : #DE5F42;
