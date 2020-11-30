@@ -40,6 +40,15 @@ span.round { border-radius: 50%;color: #fff;text-align: center;background: #000;
     overflow-x: scroll;
     white-space: nowrap;
 }
+
+span.collab_style{
+    background: #ffc107;
+    padding: 1px;
+    display: block;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+}
 .videourl {
     background: #007bff40;
     border-radius: 5px;
@@ -48,7 +57,7 @@ span.round { border-radius: 50%;color: #fff;text-align: center;background: #000;
     font-weight: 600;
     cursor: pointer;
 }
-#videoplayer { position: absolute;top: 0;left: 0;display: none;border: none; background-color: #726D6E;}
+#videoplayer { position: absolute; top: 0; left: 0; display: none; border: none; background-color: #fd7e14;}
 .tip {
     position: absolute;
     font-size: .8em;

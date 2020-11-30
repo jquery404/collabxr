@@ -215,8 +215,11 @@ function parseHTMLTable(results){
 
                 if(j==12 && cells[j]!=='') 
                     table+= `<td><span class="videourl" onmouseover="playVideoPreview(this)" onmouseout="stopVideoPreview(this)">${cells[j]}</b></td>`;
-                else if(j==0 || j==1 || j==2|| j==4 || j==5 || j==6 || j==10 || j==11 || j==12) 
-                    table+= "<td>" + cells[j] + "</td>";
+                else if(j==0 || j==1 || j==2|| j==4 || j==5 || j==6 || j==10 || j==11 || j==12) {
+                    if(j==11) cells[j] !='' ? table+= "<td><span class='collab_style'>" + cells[j] + "</span></td>" : table+= "<td>" + cells[j] + "</td>";
+                    else table+= "<td>" + cells[j] + "</td>";
+                }
+                    
 
                 
             }

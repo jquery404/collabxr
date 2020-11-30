@@ -28,6 +28,9 @@ for(var i = 0; i < 10; i++){
             .append("g").attr("transform", "translate(0,0)");
     var y = d3.scaleBand().range([barbar_height, 0]).padding(0.2);
     var x = d3.scaleLinear().range([0, barbar_width]);
+    
+    barbarData[i] = barbarData[i].sort((a, b) => { return a.type - b.type; }).reverse();
+
     x.domain([0, d3.max(barbarData[i], ((d) => { return d.amount }))])
     y.domain(barbarData[i].map((d) => { return d.type; }));
 
@@ -41,16 +44,16 @@ for(var i = 0; i < 10; i++){
 
     svg_barbar.selectAll(".bar")
         .data(barbarData[i]).enter().append("rect")
-        .attr("class", (d, j) => { return "bar_"})
+        .attr("class", (d, j) => { return "bar_" + d.type})
         .attr("fill", (d,j) => { return setBarColor(i) })
         .attr("width", (d) => {return x(d.amount); } )
         .attr("y", (d) => { return y(d.type); })
         .attr("height", y.bandwidth());
     
-    svg_barbar.selectAll(".bar_").sort(function(a, b) {
-        // console.log(a.type, b.type);
-        return d3.descending(a.type, b.type)
-    })
+    // svg_barbar.selectAll(".bar_").sort(function(a, b) {
+    //     // console.log(a.type, b.type);
+    //     return d3.descending(a.type, b.type)
+    // })
 
     svg_barbar.append("g").attr("transform", "translate(0," + barbar_height + ")").call(d3.axisBottom(x));
 
@@ -412,7 +415,7 @@ function initSwarm(){
         return d;
     });
 
-    x.domain([new Date(2000, 1, 1), new Date(2020, 9, 1)]);
+    x.domain([new Date(1999, 1, 1), new Date(2020, 9, 1)]);
 
     var industries = jz.arr.sortBy(jz.arr.pivot(data, "industry"), "count", "desc");
     y.domain(industries.map(function(d){ return d.value; }));
@@ -549,15 +552,15 @@ function initSwarm(){
 function trendSwarm(){
 
     var sankey = d3.sankey().nodeWidth(1).nodePadding(20).size([sank_width, swarm_height]);
-    sankey.nodes(sankApp.nodes).links(sankApp.links).layout(1);
+    sankey.nodes(trendData.nodes).links(trendData.links).layout(1);
 
-    var link = svg_sank.append("g").selectAll(".link").data(sankApp.links).enter().append("path")
+    var link = svg_sank.append("g").selectAll(".link").data(trendData.links).enter().append("path")
         .attr("class", "link")
         .attr("d", sankey.link())
         .style("stroke-width", (d) => { return Math.max(1, d.dy); })
         .style("stroke", (d) => { return setNodeColor(d.source.name); })
         
-    var node = svg_sank.append("g").selectAll(".node").data(sankApp.nodes).enter().append("g")
+    var node = svg_sank.append("g").selectAll(".node").data(trendData.nodes).enter().append("g")
         .attr("class", "node").attr("transform", (d) => { return "translate(" + d.x + "," + d.y + ")"; })
         .call(d3.drag().subject((d) => { return d; })
         .on("start", () => { this.parentNode.appendChild(this); })
@@ -568,8 +571,7 @@ function trendSwarm(){
     node.append("text")
         .attr("x", 5)
         .attr("y", function(d) { return d.dy / 2; })
-        .attr("dy", ".35em")
-        .style("font-size", "10px").style("font-style", "italic")
+        .attr("dy", ".35em").style("font-style", "italic").style("font-size", "0.9rem")
         .attr("text-anchor", "start")
         .attr("transform", null)
         .each(function(d) {
