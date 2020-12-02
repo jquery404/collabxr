@@ -4,6 +4,7 @@ var svgMargin = {top: radius * 2.5 + 10, left: 90, bottom: 12, right: 30};
 var swarm_width = +jz.str.keepNumber(d3.select(".swarm").style("width")) - svgMargin.left - svgMargin.right;
 var sank_width = +jz.str.keepNumber(d3.select("#sankey").style("width"))*.6;
 var barbar_width = +jz.str.keepNumber(d3.select("#barbar").style("width"));
+var swarm_tooltip = d3.select("body").append("div").attr("class", "toolTip");
 var swarm_height = 600 - svgMargin.top - svgMargin.bottom;
 var barbar_height = 40;
 
@@ -19,7 +20,7 @@ var svg_sank = d3.select("#sankey").append("svg")
             .attr("style", "margin-top:"+30+"px")
             .append("g") .attr("transform", "translate(0,0)");
 
-for(var i = 0; i < 10; i++){
+for(var i = 0; i < publisherList.length; i++){
     var margin_top = i>0?18:30;
     var svg_barbar = d3.select("#barbar").append("svg")
             .attr("width", barbar_width)
@@ -29,31 +30,35 @@ for(var i = 0; i < 10; i++){
     var y = d3.scaleBand().range([barbar_height, 0]).padding(0.2);
     var x = d3.scaleLinear().range([0, barbar_width]);
     
-    barbarData[i] = barbarData[i].sort((a, b) => { return a.type - b.type; }).reverse();
+    var barData = _xrData[publisherList[i]].bar;
+    barData = barData.sort((a, b) => { return a.type - b.type; }).reverse();
 
-    x.domain([0, d3.max(barbarData[i], ((d) => { return d.amount }))])
-    y.domain(barbarData[i].map((d) => { return d.type; }));
+    x.domain([0, d3.max(barData, ((d) => { return d.amount }))])
+    y.domain(barData.map((d) => { return d.type; }));
 
     svg_barbar.selectAll(".bar")
-        .data(barbarData[i]).enter().append("rect")
+        .data(barData).enter().append("rect")
         .attr("class", "bar-back")
         .attr("width", (d) => {return barbar_width; } )
         .attr("y", (d) => { return y(d.type)+3; })
         .attr("fill", (d,j) => { return '#171718' })
         .attr("height", 0.5);
-
+        
     svg_barbar.selectAll(".bar")
-        .data(barbarData[i]).enter().append("rect")
+        .data(barData).enter().append("rect")
         .attr("class", (d, j) => { return "bar_" + d.type})
         .attr("fill", (d,j) => { return setBarColor(i) })
         .attr("width", (d) => {return x(d.amount); } )
         .attr("y", (d) => { return y(d.type); })
-        .attr("height", y.bandwidth());
-    
-    // svg_barbar.selectAll(".bar_").sort(function(a, b) {
-    //     // console.log(a.type, b.type);
-    //     return d3.descending(a.type, b.type)
-    // })
+        .attr("height", y.bandwidth())
+        .on("mousemove", function(d){
+            swarm_tooltip
+                .style("left", d3.event.pageX+'px')
+                .style("top", d3.event.pageY+'px')
+                .style("display", "inline-block")
+                .html(d.type+": "+d.amount);
+        })
+        .on("mouseout", () => swarm_tooltip.style("display", "none"));
 
     svg_barbar.append("g").attr("transform", "translate(0," + barbar_height + ")").call(d3.axisBottom(x));
 
@@ -383,10 +388,11 @@ var x_axis = d3.axisBottom(x)
 
                 if (js !== curr_year){
                     curr_year = js; 
-                    return (js%10!==0) ? "'"+js.slice(-2) : js; 
+                    return (js%10!==0) ? "'"+js.slice(-2) : js
                 } else {
                     return null;
                 }
+
             });
 
 var y_axis_left = d3.axisLeft(y).tickSize(0)
@@ -506,27 +512,34 @@ function initSwarm(){
                 .attr("cy", function(d) { return d ? d.data.y : null; });
 
         svg.selectAll(".circle-hover").on("mouseover", function(d){
-            tip.html(d.data.name + "("+d.data.citation+")");
+            swarm_tooltip
+                .style("left", d3.event.pageX+'px')
+                .style("top", d3.event.pageY+'px')
+                .style("display", "inline-block")
+                .html(d.data.name + "("+d.data.citation+")");
+            
+            // tip.html(d.data.name + "("+d.data.citation+")");
 
             d3.select(".circle-" + d.data.slug).attr("r", radius * 2.5); //.moveToFront();
             //d3.select(".circle-bg-" + d.data.slug).style("fill-opacity", 0).attr("r", radius * 2.5).style("stroke-width", 3).moveToFront();
 
-            var tip_width = +jz.str.keepNumber(tip.style("width"));
-            var tip_height = +jz.str.keepNumber(tip.style("height"));
+            // var tip_width = +jz.str.keepNumber(tip.style("width"));
+            // var tip_height = +jz.str.keepNumber(tip.style("height"));
 
-            var circle_node = d3.select(this).node().getBoundingClientRect();
-            var circle_left = circle_node.left - tip_width/2;
-            var circle_top = circle_node.top - tip_height/2 + 10;
+            // var circle_node = d3.select(this).node().getBoundingClientRect();
+            // var circle_left = circle_node.left - tip_width/2;
+            // var circle_top = circle_node.top - tip_height/2 + 10;
 
-            var tip_left = circle_left;
-            var tip_top = circle_top;
+            // var tip_left = circle_left;
+            // var tip_top = circle_top;
 
-            tip.style("left", tip_left + "px").style("top", tip_top + "px");
+            // tip.style("left", tip_left + "px").style("top", tip_top + "px");
 
         }).on("mouseout", function(d){
             d3.select(".circle-" + d.data.slug).attr("r", radius);
             d3.select(".circle-bg-" + d.data.slug).style("fill-opacity", .3).attr("r", radius).style("stroke-width", 1);
-            tip.html("");
+            //tip.html("");
+            swarm_tooltip.style("display", "none")
             //tip.style("left", "-1000px").style("top", "-1000px");
         });
 

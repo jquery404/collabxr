@@ -198,7 +198,8 @@ function parseHTMLTable(results){
     swarmJSON = {"include": swarmData};
         
     for(i=0;i<data.length;i++){
-        table+= "<tr>";
+        table+= i==0 ? "<tr class='header'>" : "<tr>";
+        
         var row = data[i];
         var cells = row.join(",").split(",");
             
