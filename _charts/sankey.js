@@ -128,7 +128,7 @@ function drawSankeyChart() {
         
         sankeyChart.draw(data, options);
         count++;
-    }, 1000);
+    }, 500);
 }
 
 function selectHandler(e) {

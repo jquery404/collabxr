@@ -605,7 +605,6 @@ function trendSwarm(){
         sankey.relayout();
         link.attr("d", sankey.link());
     }
-    
 
     
 }
@@ -658,3 +657,5 @@ function playwithColor(dt){
     else  
         return colorHolder[9] + op; 
 }
+
+
