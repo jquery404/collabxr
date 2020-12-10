@@ -139,21 +139,21 @@ const _xrData = {
     'AH': {
         bar: [
             {"type":"System Design","amount":15},
-            {"type":"Technology","amount":25},
-            {"type":"Methods","amount":5},
-            {"type":"User Study","amount":7},
-            {"type":"Platform","amount":7},
-            {"type":"Survey","amount":7},
+            {"type":"Technology","amount":5},
+            {"type":"Methods","amount":3},
+            {"type":"User Study","amount":3},
+            {"type":"Platform","amount":2},
+            {"type":"Survey","amount":0},
         ],
         sink: [
-            ['teleoperation', 4],
-            ['healthcare', 3],
+            ['teleoperation', 2],
+            ['healthcare', 2],
             ['immersive\nlearning', 2],
-            ['social\ninteraction', 3],
-            ['collaborative\ninteraction', 5],
-            ['collaborative\ndesign', 0],
+            ['social\ninteraction', 2],
+            ['collaborative\ninteraction', 9],
+            ['collaborative\ndesign', 2],
             ['immersive\nvisualization', 0],
-            ['immersive\ncollaboration', 4],
+            ['immersive\ncollaboration', 9],
         ]
     },
     'VRST': {
