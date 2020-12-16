@@ -76,15 +76,115 @@ function drawSankeyChart() {
     //data.addColumn({type: 'string', role: 'tooltip', 'p': {'html': true}});
     
     
-    // data.addRows([
-    // [ 'Panorama image', 'HHD', 9 ],
-    // [ 'Panorama image', 'HMD', 10 ],
-    // [ 'Panorama image', 'SAR', 11 ],
-    // [ 'Panorama image', 'PC', 7 ],
-    // ].map(function(d){
-    //     //d.push(formatter.formatValue(d[2])+ ' This is an HTML tooltip<br>It needs to be formatted nicely<br>in a rectangular box that is not <i>long and thin</i>');
-    //     return d;
-    // }));
+    data.addRows([
+    [ 'Panorama image', 'HHD', 9 ],
+    [ 'Panorama image', 'HMD', 10 ],
+    [ 'Panorama image', 'SAR', 11 ],
+    [ 'Panorama image', 'PC', 7 ],
+    [ 'Panorama video', 'HHD', 9 ],
+    [ 'Panorama video', 'HMD', 10 ],
+    [ 'Panorama video', 'SAR', 11 ],
+    [ 'Panorama video', 'PC', 7 ],
+    [ '360 video', 'HHD', 45 ],
+    [ '360 video', 'HMD', 34 ],
+    [ '360 video', 'SAR', 87 ],
+    [ '360 video', 'PC', 33 ],
+    [ '3D Scene', 'HHD', 19 ],
+    [ '3D Scene', 'HMD', 20 ],
+    [ '3D Scene', 'SAR', 11 ],
+    [ '3D Scene', 'PC', 7 ],
+    [ 'Mobile video', 'HHD', 19 ],
+    [ 'Mobile video', 'HMD', 20 ],
+    [ 'Mobile video', 'SAR', 13 ],
+    [ 'Mobile video', 'PC', 22 ],
+    [ 'Mobile image', 'HHD', 23 ],
+    [ 'Mobile image', 'HMD', 34 ],
+    [ 'Mobile image', 'SAR', 11 ],
+    [ 'Mobile image', 'PC', 21 ],
+    [ 'Point clouds', 'HHD', 12 ],
+    [ 'Point clouds', 'HMD', 54 ],
+    [ 'Point clouds', 'SAR', 65 ],
+    [ 'Point clouds', 'PC', 17 ],
+
+    [ 'HHD', 'Visual', 6 ],
+    [ 'HHD', 'Auditory', 19 ],
+    [ 'HHD', 'Haptic', 43 ],
+    [ 'HMD', 'Visual', 22 ],
+    [ 'HMD', 'Auditory', 19 ],
+    [ 'HMD', 'Haptic', 23 ],
+    [ 'SAR', 'Visual', 21 ],
+    [ 'SAR', 'Auditory', 21 ],
+    [ 'SAR', 'Haptic', 19 ],
+    [ 'PC', 'Visual', 17 ],
+    [ 'PC', 'Auditory', 25 ],
+    [ 'PC', 'Haptic', 32 ],
+
+    [ 'Visual', 'Pointer', 29 ],
+    [ 'Visual', 'Viewframe', 49 ],
+    [ 'Visual', 'FoV', 43 ],
+    [ 'Visual', 'Gaze', 37 ],
+    [ 'Visual', 'Avatar', 49 ],
+    [ 'Visual', 'Gesture', 19 ],
+    [ 'Auditory', 'Voice', 49 ],
+    [ 'Haptic', 'Gloves', 19 ],
+    [ 'Haptic', 'Kinesthetics', 5 ],
+    [ 'Haptic', 'Tactiles', 18 ],
+
+    [ 'Pointer', 'Decision making', 11 ],
+    [ 'Pointer', 'Perception', 21 ],
+    [ 'Pointer', 'Usability', 14 ],
+    [ 'Pointer', 'Emotion', 23 ],
+    [ 'Pointer', 'Presence', 53 ],
+    [ 'Gaze', 'Decision making', 23 ],
+    [ 'Gaze', 'Perception', 13 ],
+    [ 'Gaze', 'Usability', 12],
+    [ 'Gaze', 'Emotion', 39 ],
+    [ 'Gaze', 'Presence', 29 ],
+    [ 'FoV', 'Decision making', 9 ],
+    [ 'FoV', 'Perception', 23 ],
+    [ 'FoV', 'Usability', 32 ],
+    [ 'FoV', 'Emotion', 12 ],
+    [ 'FoV', 'Presence', 42 ],
+    [ 'Viewframe', 'Decision making', 9 ],
+    [ 'Viewframe', 'Perception', 9 ],
+    [ 'Viewframe', 'Usability', 9 ],
+    [ 'Viewframe', 'Emotion', 9 ],
+    [ 'Viewframe', 'Presence', 9 ],
+    [ 'Voice', 'Decision making', 29 ],
+    [ 'Voice', 'Perception', 4 ],
+    [ 'Voice', 'Usability', 3 ],
+    [ 'Voice', 'Emotion', 24 ],
+    [ 'Voice', 'Presence', 9 ],
+    [ 'Avatar', 'Decision making', 19 ],
+    [ 'Avatar', 'Perception', 9 ],
+    [ 'Avatar', 'Usability', 9 ],
+    [ 'Avatar', 'Emotion', 4 ],
+    [ 'Avatar', 'Presence', 2 ],
+    [ 'Gesture', 'Decision making', 25 ],
+    [ 'Gesture', 'Perception', 21 ],
+    [ 'Gesture', 'Usability', 9 ],
+    [ 'Gesture', 'Emotion', 21 ],
+    [ 'Gesture', 'Presence', 9 ],
+    [ 'Gloves', 'Decision making', 9 ],
+    [ 'Gloves', 'Perception', 9 ],
+    [ 'Gloves', 'Usability', 9 ],
+    [ 'Gloves', 'Emotion', 9 ],
+    [ 'Gloves', 'Presence', 9 ],
+    [ 'Kinesthetics', 'Decision making', 9 ],
+    [ 'Kinesthetics', 'Perception', 9 ],
+    [ 'Kinesthetics', 'Usability', 9 ],
+    [ 'Kinesthetics', 'Emotion', 9 ],
+    [ 'Kinesthetics', 'Presence', 9 ],
+    [ 'Tactiles', 'Decision making', 9 ],
+    [ 'Tactiles', 'Perception', 9 ],
+    [ 'Tactiles', 'Usability', 9 ],
+    [ 'Tactiles', 'Emotion', 9 ],
+    [ 'Tactiles', 'Presence', 9 ],
+    
+    ].map(function(d){
+        //d.push(formatter.formatValue(d[2])+ ' This is an HTML tooltip<br>It needs to be formatted nicely<br>in a rectangular box that is not <i>long and thin</i>');
+        return d;
+    }));
         
     // Sets chart options.
     var options = {
@@ -114,21 +214,21 @@ function drawSankeyChart() {
     
     sankeyChart.draw(data, options);
     var count = 1;
-    var asd = setInterval(function(){
-        if(count == 1)
-            data.addRows(uglyArray(InputCat, DeviceCat, 2, 3));
-        else if(count == 2)
-            data.addRows(uglyArray(DeviceCat, InteractCat, 3, 7));
-        else if(count == 3)
-            data.addRows(uglyArray(InteractCat, UICat, 7, 8));
-        else if(count == 4)
-            data.addRows(uglyArray(UICat, UXCat, 8, 11));
-        else
-            clearInterval(asd);
+    // var asd = setInterval(function(){
+    //     if(count == 1)
+    //         data.addRows(uglyArray(InputCat, DeviceCat, 2, 3));
+    //     else if(count == 2)
+    //         data.addRows(uglyArray(DeviceCat, InteractCat, 3, 7));
+    //     else if(count == 3)
+    //         data.addRows(uglyArray(InteractCat, UICat, 7, 8));
+    //     else if(count == 4)
+    //         data.addRows(uglyArray(UICat, UXCat, 8, 11));
+    //     else
+    //         clearInterval(asd);
         
-        sankeyChart.draw(data, options);
-        count++;
-    }, 500);
+    //     sankeyChart.draw(data, options);
+    //     count++;
+    // }, 500);
 }
 
 function selectHandler(e) {
