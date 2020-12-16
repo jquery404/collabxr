@@ -190,7 +190,7 @@ function drawSankeyChart() {
     var options = {
         tooltip: {
             isHtml: true,
-            textStyle: {fontName: 'Times-Roman', color: '#000', fontSize:12 }, 
+            textStyle: {fontName: 'Times-Roman', color: '#000', fontSize:'10px' }, 
             showColorCode: true,
         },
         sankey: {
