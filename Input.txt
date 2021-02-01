@@ -1,0 +1,31 @@
+A User Study on Mixed Reality Remote Collaboration with Eye Gaze and Hand Gesture Sharing
+A Literature Review on Collaboration in Mixed Reality
+Social telepresence robots - the role of gesture for collaboration over a distance
+Head and gaze control of a telepresence robot with an HMD
+Think Fast: Rapid Localization of Teleoperator Gaze in 360 Hosted Telepresence
+Live Stereoscopic 3D Image with Constant Capture Direction of 360 Cameras for High-Quality Visual Telepresence
+Realtime 3D 360-Degree Telepresence with Deep-Learning-Based Head-Motion Prediction
+ScalableBody: A telepresence robot that supports face position matching using a vertical actuator
+Can You Easily Perceive the Local Environment? A User Interface with One Stitched Live Video for Mobile Robotic Telepresence Systems
+Human-guided robot 3D mapping using virtual reality technology
+Superman vs giant: A study on spatial perception for a multi-scale mixed reality flying telepresence interface
+A Lightweight Mobile Remote Collaboration Using Mixed Reality (MRCAVR)
+Wearable remotefusion: A mixed reality remote collaboration system with local eye gaze and remote hand gesture sharing
+Experimental evaluation of sketching on surfaces in VR
+MagicalHands: Mid-air hand gestures for animating in VR
+Virtual replicas for remote assistance in virtual and augmented reality
+Cross-domain retrieving sketch and shape using cycle CNNs
+Model-Guided 3D Sketching
+VROOM: Virtual Robot Overlay for Online Meetings
+Adaptive view management for drone teleoperation in complex 3D structures
+Panoramic View Reconstruction for Stereoscopic Teleoperation of a Humanoid Robot
+VR-Enabled Telepresence as a Bridge for People Environments and Experiences
+The effects of sharing awareness cues in collaborative mixed reality
+Evaluating the Combination of Visual Communication Cues for HMD-based Mixed Reality Remote Collaboration
+Collaboration in 360 videochat: Challenges and opportunities
+Stream space: Pervasive mixed reality telepresence for remote collaboration on mobile devices
+Merging live and static 360 panoramas inside a 3d scene for mixed reality remote collaboration
+Investigating the use of different visual cues to improve social presence within a 360 mixed reality remote collaboration
+OmniGlobeVR: A Collaborative 360 Communication System for VR
+A technique for mixed reality remote collaboration using 360 panoramas in 3D reconstructed scenes
+360Drops: Mixed reality remote collaboration using 360 panoramas within the 3D scene

@@ -296,7 +296,7 @@ function parseHTMLTable(results){
         }
     }
     swarmJSON = {"include": swarmData};
-        
+ 
     for(i=0;i<data.length;i++){
         table+= i==0 ? "<tr class='header'>" : "<tr>";
         
@@ -306,23 +306,22 @@ function parseHTMLTable(results){
         for(j=0;j<cells.length;j++){
             if(i==0){
                 if (j==0) table+= "<th>No</th><th>Title</th>";
-                else if(j==0 || j==1 || j==2|| j==4 || j==5 || j==6 || j==10 || j==11 || j==12) table+= "<th>"+cells[j]+"</th>";
+                else if(j==1 || j==2|| j==4 || j==5 || j==6 || j==10 || j==11 || j==12) table+= "<th>"+cells[j]+"</th>";
                 if (j==cells.length-1) table+="<th>Contrib</th>";
             }else{
                 
                 if (j==0) table+= "<td>"+i+"</td>";
                 
+                if(j==0) table += `<td><a href="https://scholar.google.com/scholar?q=${cells[j]}" target="_blank">${cells[j]}</a></td>`;
+                
                 if (j==cells.length-1) table+="<td><span class='round' style='background: "+colors[Math.floor(Math.random()*colors.length)]+"';>"+makeid(1)+"</span></td>";
 
                 if(j==12 && cells[j]!=='') 
                     table+= `<td><span class="videourl" onmouseover="playVideoPreview(this)" onmouseout="stopVideoPreview(this)">${cells[j]}</b></td>`;
-                else if(j==0 || j==1 || j==2|| j==4 || j==5 || j==6 || j==10 || j==11 || j==12) {
+                else if(j==1 || j==2|| j==4 || j==5 || j==6 || j==10 || j==11 || j==12) {
                     if(j==11) cells[j] !='' ? table+= "<td><span class='collab_style'>" + cells[j] + "</span></td>" : table+= "<td>" + cells[j] + "</td>";
                     else table+= "<td>" + cells[j] + "</td>";
                 }
-                    
-
-                
             }
             
         }
