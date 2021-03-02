@@ -499,6 +499,10 @@ function initSwarm(){
             .merge(circle)
                 .attr("cx", function(d) { if(d) return d ? d.data.x : null; })
                 .attr("cy", function(d) { if(d) return d ? d.data.y : null; });
+                
+            // animation    
+                // svg.selectAll(".circle").transition().ease(d3.easeLinear)
+                // .duration(Math.random()*6000+6000).style("opacity", "0");
 
         // hover
         var hover_circle = svg.selectAll(".circle-hover").data(v.polygons(data), function(d){ return d.data.slug; });
