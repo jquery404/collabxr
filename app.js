@@ -18,7 +18,7 @@ app.get('/dataviz', (req, res) => {
 
 // routes
 app.get('/jigsaw', (req, res) => {
-    res.sendFile(__dirname + '/dataviz/jigsaw.html');
+    res.sendFile(__dirname + '/test.html');
 });
 
 // routes

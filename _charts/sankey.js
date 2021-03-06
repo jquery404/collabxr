@@ -273,7 +273,7 @@ function monthNo(m){
 }
 
 function parseHTMLTable(results){
-    var table = "<table class='table' id='myTable'>";
+    var table = "<table class='table lr-list' id='myTable'>";
     var data = results.data;
     var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f','#cab2d6', '#ffff99', '#1f78b4', '#33a02c'];
     

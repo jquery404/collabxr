@@ -46,7 +46,7 @@
     </header>
 
     <div class="row justify-content-center">
-        <div class="col-6">
+        <div class="col-md-6">
             <div id="sankey_basic" class="mb-3" style="height: 400px; margin:0 auto;"></div>
             <div>
                 <ul class="cat_label">
@@ -60,7 +60,7 @@
             <div><strong>Fig 1.</strong> A total of <strong>696</strong> papers that employed XR collaboration technology between 2000 and 2020 classified by (left-to-right): input type, device type, interaction, cue type and evaluation type in user studies.</div>
         
         </div>
-        <div class="col-10 py-5">
+        <div class="col-md-10 py-5">
             <h4>Contributions</h4>
             <p>The outline of the contributions of this literature review is threefold:</p>
             <ul>
@@ -69,7 +69,7 @@
                 <li>a publicly available website that includes interactive visualization, source codes, and all the data set of the data collected in our systematic literature analysis</li>
             </ul>
         </div>
-        <div class="col-10 py-3">
+        <div class="col-md-10 py-3">
             <h4>Method</h4>
             <p>
                 <ul>
@@ -89,7 +89,7 @@
                 <div class="col-3 p-0 pl-1 text-center" style="font-size: 0.65rem; font-weight: 700;">Application area</div>
             </div>
         </div>
-        <div class="col-11">
+        <div class="col-md-11">
             <div class="row">
                 <div class="col-8">
                     <div class="swarm"></div>
@@ -103,19 +103,17 @@
             </div>
         </div>
 
-        <div class="col-8 mt-5">
+        <div class="col-md-8 mt-5">
             <img src="gfx/setup_guide.jpg" class="img-fluid" /><br/>
-            <p>Typical setup guide for XR collaboration platform</p>
+            <p class="text-center"><strong>Fig 3.</strong> Typical setup guide for XR collaboration platform</p>
         </div>
         
 
-        <div class="col-11 mt-5 pt-5">
-            <div class="form-group row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Search all columns:</label>
-                <div class="col-sm-4 col-10">
-                    <input type="text" class="form-control" id="searchTerm" value="">
+        <div class="col-md-11 mt-5 pt-5">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                   <input type="search" placeholder="Search..." class="form-control search-input" data-table="lr-list">
                 </div>
-                <input type="button" class="btn btn-primary" value="Go">
             </div>
               
             <div id="parsed_csv_list" class="table-responsive"></div>
@@ -136,45 +134,6 @@
 <script type="text/javascript" src="_charts/heatmap.js"></script>
 <script type="text/javascript" src="_charts/stream.js"></script>
 <script type="text/javascript" src="_charts/swarm.js"></script>
-<script type="text/javascript">
-    
-    let nowPlaying = false;
-
-    document.addEventListener("DOMContentLoaded", function(event) { 
-        loadCSV();
-        // initHeatmap();
-        // initStreamgraph();
-
-        document.getElementById('copyright').innerHTML = new Date().getFullYear();
-    });
-
-
-
-    
-    function playVideoPreview(e){
-        let vdoPlr = document.getElementById('videoplayer');
-        let x = event.pageX; 
-        let y = event.pageY; 
-        let src = e.innerHTML;
-
-        vdoPlr.style.display = 'block';
-        vdoPlr.style.left = x - 150 + 'px';
-        vdoPlr.style.top = y + 20 + 'px';
-        
-        let ampersandPosition = src.indexOf('=');
-        if(ampersandPosition != -1) src = src.substring(ampersandPosition+1, src.length);
-               
-        vdoPlr.src = 'https://www.youtube.com/embed/'+src+'/?autoplay=1&mute=1&enablejsapi=1';
-    }
-
-    function stopVideoPreview(e){
-        let vdoPlr = document.getElementById('videoplayer');
-        vdoPlr.style.display = 'none';
-        vdoPlr.src = '';
-    }
-
-    
-    
-</script>
+<script type="text/javascript" src="main.js"></script>
 </body>
 </html>

@@ -149,3 +149,6 @@ th {
     background : #4FA490;
     background : #3B7F9F;
 }
+
+.show { background: #fffce6; }
+.hidden { display: none; }
