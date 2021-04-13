@@ -131,6 +131,16 @@ d3.sankey = function() {
             x3 = xi(1 - curvature),
             y0 = d.source.y + d.sy + d.dy / 2,
             y1 = d.target.y + d.ty + d.dy / 2;
+            if(d.source.name=="CHI") x0 = 0, y0 =20;
+            if(d.source.name=="IEEE VR") x0 = 0, y0 =80;
+            if(d.source.name=="ISMAR") x0 = 0, y0 =140;
+            if(d.source.name=="SIGGRAPH") x0 = 0, y0 =190;
+            if(d.source.name=="VRST") x0 = 0, y0 =250;
+            if(d.source.name=="TVCG") x0 = 0, y0 =300;
+            if(d.source.name=="CSCW") x0 = 0, y0 =360;
+            if(d.source.name=="UIST") x0 = 0, y0 =420;
+            if(d.source.name=="AH") x0 = 0, y0 =480;
+            if(d.source.name=="Front Robot AI") x0 = 0, y0 =550;
         return "M" + x0 + "," + y0
                 + "C" + x2 + "," + y0
                 + " " + x3 + "," + y1
@@ -322,7 +332,7 @@ d3.sankey = function() {
         }
     
         function ascendingDepth(a, b) {
-        return a.y - b.y;
+        //return a.y - b.y;
         }
     }
     
@@ -583,7 +593,7 @@ function trendSwarm(){
         .on("start", () => { this.parentNode.appendChild(this); })
         .on("drag", dragmove));
 
-    node.append("rect").attr("height", (d) => { return d.dy; }).attr("width", sankey.nodeWidth())
+    //node.append("rect").attr("height", (d) => { return d.dy; }).attr("width", sankey.nodeWidth())
 
     node.append("text")
         .attr("x", 5)

@@ -14,14 +14,14 @@ const colorHolder = [
 const publisherList = [
     "CHI", 
     "IEEE VR", 
-    "SIGGRAPH", 
     "ISMAR", 
-    "CSCW", 
+    "SIGGRAPH", 
     "VRST", 
     "TVCG", 
+    "CSCW", 
     "UIST", 
+    "AH",
     "Front Robot AI", 
-    "AH"
 ];
 
 const paperTrends = [
