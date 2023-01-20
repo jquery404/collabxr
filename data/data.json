@@ -1,0 +1,787 @@
+{
+  "include": [
+    {
+      "name": "Harvey Weinstein",
+      "industry": "CHI",
+      "accuse_date": "12-09-2001",
+      "image_url": "untitled.png",
+      "title": "Hollywood producer",
+      "citation": 15
+    },
+    {
+      "name": "Harvey Weinstein",
+      "industry": "CHI",
+      "accuse_date": "12-09-2016",
+      "image_url": "untitled.png",
+      "title": "Hollywood producer",
+      "citation": 15
+    },
+    {
+      "name": "Andy Signore",
+      "industry": "SIGGRAPH",
+      "accuse_date": "10-06-2019",
+      "image_url": "signore.png",
+      "title": "Media executive ",
+      "citation": 11
+    },
+    {
+      "name": "Ben Affleck",
+      "industry": "IEEEVR",
+      "accuse_date": "10-05-2019",
+      "image_url": "affleck.png",
+      "title": "Hollywood actor",
+      "citation": 25
+    },
+    {
+      "name": "Roy Price",
+      "industry": "TVCG",
+      "accuse_date": "10-12-2019",
+      "image_url": "price.png",
+      "title": "Amazon Studios president",
+      "citation": 0
+    },
+    {
+      "name": "Oliver Stone",
+      "industry": "ISMAR",
+      "accuse_date": "10-13-2019",
+      "image_url": "stone.png",
+      "title": "Hollywood filmmaker ",
+      "citation": 11
+    },
+    {
+      "name": "Bob Weinstein",
+      "industry": "ISMAR",
+      "accuse_date": "10-17-2019",
+      "image_url": "weinstein-bob.png",
+      "title": "Hollywood producer ",
+      "citation": 3
+    },
+    {
+      "name": "Lockhart Steele",
+      "industry": "CSCW",
+      "accuse_date": "10-19-2019",
+      "image_url": "steele.png",
+      "title": "Vox Media editorial director",
+      "citation": 1
+    },
+    {
+      "name": "Robert Scoble",
+      "industry": "AH",
+      "accuse_date": "10-19-2019",
+      "image_url": "scoble.png",
+      "title": "Tech blogger ",
+      "citation": 0
+    },
+    {
+      "name": "David Blaine",
+      "industry": "ISMAR",
+      "accuse_date": "10-19-2019",
+      "image_url": "blaine.png",
+      "title": "Magician ",
+      "citation": 1
+    },
+    {
+      "name": "Gilbert Rozon",
+      "industry": "TVCG",
+      "accuse_date": "10-19-2019",
+      "image_url": "rozon.png",
+      "title": "Comedy festival founder ",
+      "citation": 0
+    },
+    {
+      "name": "Chris Savino",
+      "industry": "ISMAR",
+      "accuse_date": "10-05-2019",
+      "image_url": "savino.png",
+      "title": "Television show creator",
+      "citation": 0
+    },
+    {
+      "name": "Twiggy Ramirez",
+      "industry": "UIST",
+      "accuse_date": "10-20-2019",
+      "image_url": "ramirez.png",
+      "title": "Bassist and guitarist for Marilyn Manson ",
+      "citation": 0
+    },
+    {
+      "name": "Zain Jaffer",
+      "industry": "AH",
+      "accuse_date": "10-20-2019",
+      "image_url": "jaffer.png",
+      "title": "CEO of the startup, Vungle",
+      "citation": 1
+    },
+    {
+      "name": "James Toback",
+      "industry": "ISMAR",
+      "accuse_date": "10-22-2019",
+      "image_url": "toback.png",
+      "title": "Director",
+      "citation": 0
+    },
+    {
+      "name": "Terry Richardson",
+      "industry": "CSCW",
+      "accuse_date": "10-23-2019",
+      "image_url": "richardson.png",
+      "title": "Fashion photographer ",
+      "citation": 1
+    },
+    {
+      "name": "Leon Wieseltier ",
+      "industry": "CSCW",
+      "accuse_date": "10-24-2019",
+      "image_url": "wieseltier.png",
+      "title": "Former literary editor at The New Republic",
+      "citation": 1
+    },
+    {
+      "name": "Ethan Kath",
+      "industry": "UIST",
+      "accuse_date": "10-24-2019",
+      "image_url": "kath.png",
+      "title": "Co-founder of the band Crystal Castles ",
+      "citation": 0
+    },
+    {
+      "name": "Knight Landesman",
+      "industry": "CSCW",
+      "accuse_date": "10-25-2019",
+      "image_url": "landesman.png",
+      "title": "Publisher of Artforum magazine ",
+      "citation": 0
+    },
+    {
+      "name": "George H.W. Bush",
+      "industry": "VRST",
+      "accuse_date": "10-25-2019",
+      "image_url": "bush.png",
+      "title": "41st President of the United States",
+      "citation": 0
+    },
+    {
+      "name": "Mark Halperin",
+      "industry": "CSCW",
+      "accuse_date": "10-26-2019",
+      "image_url": "halperin.png",
+      "title": "Political journalist, \"Game Change\" co-author",
+      "citation": 0
+    },
+    {
+      "name": "John Besh",
+      "industry": "TVCG",
+      "accuse_date": "10-26-2019",
+      "image_url": "besh.png",
+      "title": "Chef",
+      "citation": 0
+    },
+    {
+      "name": "Ken Baker",
+      "industry": "CSCW",
+      "accuse_date": "10-26-2019",
+      "image_url": "baker.png",
+      "title": "Senior E! News correspondent ",
+      "citation": 0
+    },
+    {
+      "name": "Rick Najera",
+      "industry": "CSCW",
+      "accuse_date": "10-26-2019",
+      "image_url": "najera.png",
+      "title": "Writer and producer ",
+      "citation": 1
+    },
+    {
+      "name": "Kirt Webster",
+      "industry": "UIST",
+      "accuse_date": "10-27-2019",
+      "image_url": "webster.png",
+      "title": "Country music producer",
+      "citation": 1
+    },
+    {
+      "name": "Kevin Spacey",
+      "industry": "ISMAR",
+      "accuse_date": "10-29-2019",
+      "image_url": "spacey.png",
+      "title": "House of Cards star",
+      "citation": 0
+    },
+    {
+      "name": "Michael Fallon",
+      "industry": "VRST",
+      "accuse_date": "10-30-2009",
+      "image_url": "fallon.png",
+      "title": "U.K. Defense Minister",
+      "citation": 0
+    },
+    {
+      "name": "Jeremy Piven",
+      "industry": "ISMAR",
+      "accuse_date": "10-30-2019",
+      "image_url": "piven.png",
+      "title": "Entourage star",
+      "citation": 1
+    },
+    {
+      "name": "Hamilton Fish",
+      "industry": "CSCW",
+      "accuse_date": "10-30-2011",
+      "image_url": "fish.png",
+      "title": "Publisher and President of New Republic",
+      "citation": 1
+    },
+    {
+      "name": "Michael Oreskes",
+      "industry": "CSCW",
+      "accuse_date": "10-31-2019",
+      "image_url": "oreskes.png",
+      "title": "Senior Vice President of News at NPR",
+      "citation": 0
+    },
+    {
+      "name": "Andy Dick",
+      "industry": "ISMAR",
+      "accuse_date": "10-31-2019",
+      "image_url": "dick.png",
+      "title": "Comedian and actor",
+      "citation": 0
+    },
+    {
+      "name": "Brett Ratner",
+      "industry": "ISMAR",
+      "accuse_date": "11-01-2014",
+      "image_url": "ratner.png",
+      "title": "Hollywood filmmaker ",
+      "citation": 0
+    },
+    {
+      "name": "Dustin Hoffman",
+      "industry": "ISMAR",
+      "accuse_date": "11-01-2014",
+      "image_url": "hoffman.png",
+      "title": "Oscar winning actor",
+      "citation": 0
+    },
+    {
+      "name": "Jeff Hoover",
+      "industry": "VRST",
+      "accuse_date": "11-01-2019",
+      "image_url": "hoover.png",
+      "title": "Kentucky House Speaker",
+      "citation": 0
+    },
+    {
+      "name": "Danny Jordaan",
+      "industry": "Frontier Robot AI",
+      "accuse_date": "11-01-2014",
+      "image_url": "jordaan.png",
+      "title": "President of South African Football Association",
+      "citation": 0
+    },
+    {
+      "name": "Nick Carter",
+      "industry": "UIST",
+      "accuse_date": "11-02-2019",
+      "image_url": "carter.png",
+      "title": "Singer in the Backstreet Boys.",
+      "citation": 0
+    },
+    {
+      "name": "David Guillod",
+      "industry": "TVCG",
+      "accuse_date": "11-03-2019",
+      "image_url": "guillod.png",
+      "title": "CEO of Primary Wave ISMAR.",
+      "citation": 0
+    },
+    {
+      "name": "Jack Latvala",
+      "industry": "VRST",
+      "accuse_date": "11-03-2019",
+      "image_url": "latvala.png",
+      "title": "Florida Senate budget chair",
+      "citation": 0
+    },
+    {
+      "name": "Ed Westwick",
+      "industry": "ISMAR",
+      "accuse_date": "11-07-2019",
+      "image_url": "westwick.png",
+      "title": "Gossip Girl star",
+      "citation": 0
+    },
+    {
+      "name": "Alex Gilady",
+      "industry": "Frontier Robot AI",
+      "accuse_date": "11-07-2019",
+      "image_url": "gilady.png",
+      "title": "President of Israelie broadcasting company",
+      "citation": 0
+    },
+    {
+      "name": "Jeffrey Tambor",
+      "industry": "ISMAR",
+      "accuse_date": "11-08-2019",
+      "image_url": "tambor.png",
+      "title": "Hollywood actor ",
+      "citation": 0
+    },
+    {
+      "name": "Benjamin Genocchio",
+      "industry": "TVCG",
+      "accuse_date": "11-08-2019",
+      "image_url": "genocchio.png",
+      "title": "Art critic and major art fair director ",
+      "citation": 0
+    },
+    {
+      "name": "Steven Seagal",
+      "industry": "ISMAR",
+      "accuse_date": "11-08-2019",
+      "image_url": "seagal.png",
+      "title": "Actor",
+      "citation": 2
+    },
+    {
+      "name": "Robert Knepper",
+      "industry": "ISMAR",
+      "accuse_date": "11-08-2019",
+      "image_url": "knepper.png",
+      "title": "Prison Break star ",
+      "citation": 1
+    },
+    {
+      "name": "Roy Moore",
+      "industry": "VRST",
+      "accuse_date": "11-09-2019",
+      "image_url": "moore.png",
+      "title": "Comedian and actor",
+      "citation": 1
+    },
+    {
+      "name": "Louis C.K.",
+      "industry": "ISMAR",
+      "accuse_date": "11-09-2019",
+      "image_url": "ck.png",
+      "title": "Comedian and actor",
+      "citation": 1
+    },
+    {
+      "name": "Matthew Weiner",
+      "industry": "ISMAR",
+      "accuse_date": "11-09-2019",
+      "image_url": "weiner.png",
+      "title": "Mad Men creator ",
+      "citation": 1
+    },
+    {
+      "name": "André Balazs",
+      "industry": "TVCG",
+      "accuse_date": "11-09-2016",
+      "image_url": "balazs.png",
+      "title": "Celebrity hotelier ",
+      "citation": 5
+    },
+    {
+      "name": "Eddie Berganza",
+      "industry": "ISMAR",
+      "accuse_date": "11-10-2016",
+      "image_url": "berganza.png",
+      "title": "DC Comics editor ",
+      "citation": 2
+    },
+    {
+      "name": "Andrew Kreisberg",
+      "industry": "ISMAR",
+      "accuse_date": "11-10-2019",
+      "image_url": "kreisberg.png",
+      "title": "TV producer ",
+      "citation": 2
+    },
+    {
+      "name": "George Takei",
+      "industry": "ISMAR",
+      "accuse_date": "11-10-2019",
+      "image_url": "takei.png",
+      "title": "Star Trek star ",
+      "citation": 5
+    },
+    {
+      "name": "Gary Goddard",
+      "industry": "ISMAR",
+      "accuse_date": "11-10-2019",
+      "image_url": "goddard.png",
+      "title": "Hollywood director and producer ",
+      "citation": 1
+    },
+    {
+      "name": "Peter Aalbaek Jensen",
+      "industry": "ISMAR",
+      "accuse_date": "11-10-2019",
+      "image_url": "jensen.png",
+      "title": "Danish film producer ",
+      "citation": 5
+    },
+    {
+      "name": "Richard Dreyfuss",
+      "industry": "ISMAR",
+      "accuse_date": "11-10-2019",
+      "image_url": "dreyfuss.png",
+      "title": "Hollywood actor ",
+      "citation": 3
+    },
+    {
+      "name": "Sepp Blatter",
+      "industry": "Frontier Robot AI",
+      "accuse_date": "11-10-2019",
+      "image_url": "blatter.png",
+      "title": "Former FIFA President",
+      "citation": 4
+    },
+    {
+      "name": "Mark Schwahn",
+      "industry": "ISMAR",
+      "accuse_date": "11-13-2019",
+      "image_url": "schwahn.png",
+      "title": "One Tree Hill creator and showrunner ",
+      "citation": 12
+    },
+    {
+      "name": "Tom Sizemore",
+      "industry": "ISMAR",
+      "accuse_date": "11-13-2019",
+      "image_url": "sizemore.png",
+      "title": "Hollywood actor ",
+      "citation": 3
+    },
+    {
+      "name": "Giuseppe Castellano",
+      "industry": "CSCW",
+      "accuse_date": "11-14-2019",
+      "image_url": "castellano.png",
+      "title": "Exec. art director at Penguin Random House",
+      "citation": 1
+    },
+    {
+      "name": "Andy Henry",
+      "industry": "ISMAR",
+      "accuse_date": "11-15-2019",
+      "image_url": "henry.png",
+      "title": "Casting director ",
+      "citation": 13
+    },
+    {
+      "name": "Al Franken",
+      "industry": "VRST",
+      "accuse_date": "11-16-2019",
+      "image_url": "franken.png",
+      "title": "U.S. Senator ",
+      "citation": 2
+    },
+    {
+      "name": "Matt Zimmerman",
+      "industry": "CSCW",
+      "accuse_date": "11-16-2019",
+      "image_url": "zimmerman.png",
+      "title": "Senior VP of NBC News Talent Booking ",
+      "citation": 1
+    },
+    {
+      "name": "Stephen Bittel",
+      "industry": "VRST",
+      "accuse_date": "11-16-2019",
+      "image_url": "bittel.png",
+      "title": "Florida Democratic Party Chairman",
+      "citation": 0
+    },
+    {
+      "name": "Russell Simmons",
+      "industry": "UIST",
+      "accuse_date": "11-19-2019",
+      "image_url": "simmons.png",
+      "title": "Co-founder of music label Def Jam Recordings",
+      "citation": 36
+    },
+    {
+      "name": "Charlie Rose ",
+      "industry": "CSCW",
+      "accuse_date": "11-20-2019",
+      "image_url": "rose.png",
+      "title": "Host of PBS' \"Charlie Rose,\" and co-host of \"CBS This Morning\"",
+      "citation": 22
+    },
+    {
+      "name": "Glenn Thrush",
+      "industry": "CSCW",
+      "accuse_date": "11-20-2019",
+      "image_url": "thrush.png",
+      "title": "NYT White House correspondent",
+      "citation": 22
+    },
+    {
+      "name": "John Conyers",
+      "industry": "VRST",
+      "accuse_date": "11-21-2019",
+      "image_url": "conyers.png",
+      "title": "U.S. Congressman",
+      "citation": 1
+    },
+    {
+      "name": "John Lasseter",
+      "industry": "TVCG",
+      "accuse_date": "11-21-2019",
+      "image_url": "lasseter.png",
+      "title": "Head of Pixar and Walt Disney Animation",
+      "citation": 1
+    },
+    {
+      "name": "Richard Branson",
+      "industry": "TVCG",
+      "accuse_date": "11-26-2019",
+      "image_url": "branson.png",
+      "title": "Founder of the Virgin Group",
+      "citation": 1
+    },
+    {
+      "name": "Garrison Keillor",
+      "industry": "CSCW",
+      "accuse_date": "11-29-2019",
+      "image_url": "keillor.png",
+      "title": "Public radio personality",
+      "citation": "Fired."
+    },
+    {
+      "name": "Johnny Iuzzini",
+      "industry": "TVCG",
+      "accuse_date": "11-29-2019",
+      "image_url": "iuzzini.png",
+      "title": "Celebrity chef ",
+      "citation": "He denied the allegations."
+    },
+    {
+      "name": "Matt Lauer",
+      "industry": "CSCW",
+      "accuse_date": "11-29-2019",
+      "image_url": "lauer.png",
+      "title": "Today' anchor ",
+      "citation": 0
+    },
+    {
+      "name": "Israel Horovitz",
+      "industry": "ISMAR",
+      "accuse_date": "11-30-2019",
+      "image_url": "horovitz.png",
+      "title": "Playwright ",
+      "citation": 0
+    },
+    {
+      "name": "Shervin Pishevar",
+      "industry": "AH",
+      "accuse_date": "11-30-2019",
+      "image_url": "pishevar.png",
+      "title": "Venture capitalist ",
+      "citation": 0
+    },
+    {
+      "name": "Blake Farenthold",
+      "industry": "VRST",
+      "accuse_date": "12-01-2019",
+      "image_url": "farenthold.png",
+      "title": "U.S. Congressman",
+      "citation": 0
+    },
+    {
+      "name": "Dylan Howard",
+      "industry": "CSCW",
+      "accuse_date": "12-05-2019",
+      "image_url": "howard.png",
+      "title": "Top gossip magazine editor ",
+      "citation": 0
+    },
+    {
+      "name": "Trent Franks ",
+      "industry": "VRST",
+      "accuse_date": "12-08-2019",
+      "image_url": "franks.png",
+      "title": "U.S. Congressman",
+      "citation": 0
+    },
+    {
+      "name": "Alex Kozinski ",
+      "industry": "VRST",
+      "accuse_date": "12-08-2019",
+      "image_url": "kozinski.png",
+      "title": "Judge for U.S. Court of Appeals for the 9th Circuit",
+      "citation": 0
+    },
+    {
+      "name": "Mario Batali ",
+      "industry": "TVCG",
+      "accuse_date": "12-11-2019",
+      "image_url": "batali.png",
+      "title": "Chef ",
+      "citation": 0
+    },
+    {
+      "name": "Ryan Lizza",
+      "industry": "CSCW",
+      "accuse_date": "12-11-2019",
+      "image_url": "lizza.png",
+      "title": "New Yorker politics reporter ",
+      "citation": 0
+    },
+    {
+      "name": "Tavis Smiley",
+      "industry": "CSCW",
+      "accuse_date": "12-13-2019",
+      "image_url": "smiley.png",
+      "title": "PBS talk-show host ",
+      "citation": 0
+    },
+    {
+      "name": "Jerry Richardson",
+      "industry": "Frontier Robot AI",
+      "accuse_date": "12-17-2019",
+      "image_url": "j-richardson.png",
+      "title": "Carolina Panthers owner ",
+      "citation": 0
+    },
+    {
+      "name": "T.J. Miller",
+      "industry": "ISMAR",
+      "accuse_date": "12-19-2019",
+      "image_url": "miller.png",
+      "title": "Silicon Valley actor ",
+      "citation": 0
+    },
+    {
+      "name": "Jordan Vogt-Roberts",
+      "industry": "ISMAR",
+      "accuse_date": "12-19-2019",
+      "image_url": "roberts.png",
+      "title": "Director ",
+      "citation": 1
+    },
+    {
+      "name": "Andrea Ramsey ",
+      "industry": "VRST",
+      "accuse_date": "12-15-2019",
+      "image_url": "ramsey.png",
+      "title": "Kansas Democratic candidate ",
+      "citation": 0
+    },
+    {
+      "name": "Mike Germano ",
+      "industry": "CSCW",
+      "accuse_date": "12-23-2019",
+      "image_url": "germano.png",
+      "title": "Chief Digital Officer at Vice Media",
+      "citation": 0
+    },
+    {
+      "name": "Charlie Walk",
+      "industry": "UIST",
+      "accuse_date": "1-1-2012",
+      "image_url": "walk.png",
+      "title": "President of Republic Records Group",
+      "citation": 0
+    },
+    {
+      "name": "James Franco",
+      "industry": "ISMAR",
+      "accuse_date": "1-11-2011",
+      "image_url": "franco.png",
+      "title": "Actor ",
+      "citation": 0
+    },
+    {
+      "name": "Aziz Ansari",
+      "industry": "ISMAR",
+      "accuse_date": "1-13-2012",
+      "image_url": "ansari.png",
+      "title": "Commedian/Actor ",
+      "citation": 0
+    },
+    {
+      "name": "Michael Douglas",
+      "industry": "ISMAR",
+      "accuse_date": "1-18-2013",
+      "image_url": "douglas.png",
+      "title": "Actor",
+      "citation": 0
+    },
+    {
+      "name": "Patrick Meehan",
+      "industry": "VRST",
+      "accuse_date": "1-20-2018",
+      "image_url": "meehan.png",
+      "title": "Congressman",
+      "citation": 0
+    },
+    {
+      "name": "Robert Moore",
+      "industry": "CSCW",
+      "accuse_date": "1-22-2018",
+      "image_url": "moore.png",
+      "title": "Top editor at New York Daily News",
+      "citation": 0
+    },
+    {
+      "name": "David Copperfield ",
+      "industry": "CSCW",
+      "accuse_date": "1-25-2018",
+      "image_url": "copperfield.png",
+      "title": "Magician ",
+      "citation": 0
+    },
+    {
+      "name": "Alexander \"Doc\" Jones",
+      "industry": "CSCW",
+      "accuse_date": "1-25-2018",
+      "image_url": "doc-jones.png",
+      "title": "New York Daily News editor ",
+      "citation": 0
+    },
+    {
+      "name": "Steve Wynn",
+      "industry": "TVCG",
+      "accuse_date": "1-26-2018",
+      "image_url": "wynn.png",
+      "title": "Casino mogul ",
+      "citation": 0
+    },
+    {
+      "name": "Wayne Pacelle",
+      "industry": "TVCG",
+      "accuse_date": "1-29-2018",
+      "image_url": "pacelle.png",
+      "title": "Humane Society CEO",
+      "citation": 0
+    },
+    {
+      "name": "Patrick Witty",
+      "industry": "CSCW",
+      "accuse_date": "1-31-2018",
+      "title": "National Geographic photo editor ",
+      "citation": 0
+    },
+    {
+      "name": "Don Shooter",
+      "industry": "VRST",
+      "accuse_date": "1-31-2018",
+      "image_url": "shooter.png",
+      "title": "Republican Arizona State Congressman",
+      "citation": 0
+    },
+    {
+      "name": "Vincent Cirrincione",
+      "industry": "ISMAR",
+      "accuse_date": "2-2-2020",
+      "image_url": "cirrincione.png",
+      "title": "Hollywood manager",
+      "citation": 0
+    }
+  ]
+}

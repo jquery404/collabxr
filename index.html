@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Collaboration in XR</title>
+    <link rel="icon" href="favicon.ico" sizes="16x16" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800;900&display=swap">
+    <link rel="stylesheet" href="style.css">
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
+    <script type="text/javascript" src="https://d3js.org/d3.v4.min.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/jeezy@1.12.13/lib/jeezy.min.js"></script>
+
+</head>
+
+<body>
+<div class="container-fluid">
+    <header class="row my-5 justify-content-center">
+        <div class="social-links col-md-8 text-center">
+            <div class="social-link">
+                <a data-url="https%3A%2F%2Fcollabxr.herokuapp.com%2F" data-text="Collaboration%20in%20XR" data-network="twitter" href="https://twitter.com/share?url=https%3A%2F%2Fcollabxr.herokuapp.com%2F&amp;text=Collaboration%20in%20XR" rel="Collaboration%20in%20XR" onclick="share(this.href);return false" onfocus="this.blur()" class="sr-twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </div>
+            <div class="social-link">
+                <a data-url="https%3A%2F%2Fcollabxr.herokuapp.com%2F" data-text="Collaboration%20in%20XR" data-network="facebook" href="http://www.facebook.com/sharer.php?s=100&amp;p[title]=Collaboration in XR&amp;p[summary]=&amp;p[url]=https%3A%2F%2Fcollabxr.herokuapp.com%2F" onclick="share(this.href);return false" onfocus="this.blur()" class="sr-facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
+        </div>
+
+        <div class="col-md-8 text-center">
+            <h1>
+                <span class="d-block">Collaboration in XR</span>
+                <span class="d-block">A Systematic Literature Review</span>
+            </h1>
+
+            <div class="byline">By <b><a href="https://jquery404.github.io/">Faisal Zaman</a></b></div>
+
+            <hr/>
+        </div>
+    </header>
+
+    <div class="row justify-content-center">
+        <div class="col-6">
+            <div id="sankey_basic" class="mb-3" style="height: 400px; margin:0 auto;"></div>
+            <div>
+                <ul class="cat_label">
+                    <li>Input Type</li> 
+                    <li>Device Type</li> 
+                    <li>Interaction (Cue)</li>
+                    <li>Cue Type</li> 
+                    <li>Evaluation Type</li>
+                </ul>
+            </div>
+            <div><strong>Fig 1.</strong> A total of 547 papers that employed XR collaboration technology between 2000 and 2020 classified by (left-to-right): input type, device type, interaction, cue type and evaluation type in user studies.</div>
+        
+        </div>
+        <div class="col-10 py-5">
+            <h4>Contributions</h4>
+            <p>The outline of the contributions of this literature review is threefold:</p>
+            <ul>
+                <li>a systematic analysis of paper types, research topics, evaluation scenarios, cognitive aspects that emerge from data collection methods, and configurations of evaluations in XR collaboration.</li>
+                <li>an overview of some of the key challenges presented in the recent literature and provide a summary of related research work.</li>
+                <li>a publicly available website that includes interactive visualization, source codes, and all the data set of the data collected in our system-atic literature analysis</li>
+            </ul>
+        </div>
+        <div class="col-10 py-3">
+            <h4>Method</h4>
+            <p>
+                <ul>
+                    <li>We excluded publications that included the search terms but were not aimed at understanding, testing, or implementing XR collaboration - the search terms were associated with different aims.</li>
+                    <li>We excluded publications that included duplicates between the two libraries, or publications where the same or similar results were presented in different venues or publication formats. For example, the same work might have appeared in a poster or extended abstract form, and later published in a more extensive proceeding or journal article. In such cases, we included only the final relative comprehensive publication, omitting the earlier preliminary publications.</li>
+                    <li>We excluded publications that focused on collaboration but not associate with XR. While some publications on collaboration explored the impact of their integration into the industry, we excluded them from this review.</li>
+                </ul>
+            </p>
+        </div>
+        <!-- <div class="col-10"><div class="streamgraph"></div></div> -->
+        <div class="col-6 mt-5"><img class="img-fluid" src="gfx/lr_viz_label.svg" /></div>
+        <div class="w-100"></div>
+        <div class="col-11">
+            <div class="row">
+                <div class="col-8"></div>
+                <div class="col-1 p-0 text-center" style="font-size: 0.65rem;">Publication type</div>
+                <div class="col-3 p-0 pl-1 text-center" style="font-size: 0.65rem;">Application area</div>
+            </div>
+        </div>
+        <div class="col-11">
+            <div class="row">
+                <div class="col-8">
+                    <div class="swarm"></div>
+                </div>
+                <div class="col-1 p-0">
+                    <div id="barbar" style="height: 550px;"></div>
+                </div>
+                <div class="col-3 p-0 pl-1">
+                    <div id="sankey" style="height: 550px;"></div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col-11 mt-5 pt-5">
+            <div id="parsed_csv_list" class="table-responsive"></div>
+        </div>
+    </div>
+    
+
+    <iframe id="videoplayer"></iframe>
+</div>
+<footer class="mt-5">
+    <div class="footer-copyright text-center py-3">
+        Copyright &copy; <span id="copyright"></span> <a href="https://jquery404.github.io/">Faisal Zaman</a>. All Rights Reserved.
+    </div>
+</footer>
+
+<script type="text/javascript" src="_charts/constantine.js"></script>
+<script type="text/javascript" src="_charts/sankey.js"></script>
+<script type="text/javascript" src="_charts/heatmap.js"></script>
+<script type="text/javascript" src="_charts/stream.js"></script>
+<script type="text/javascript" src="_charts/swarm.js"></script>
+<script type="text/javascript">
+    
+    let nowPlaying = false;
+
+    document.addEventListener("DOMContentLoaded", function(event) { 
+        loadCSV();
+        // initHeatmap();
+        // initStreamgraph();
+
+        document.getElementById('copyright').innerHTML = new Date().getFullYear();
+    });
+
+
+
+    
+    function playVideoPreview(e){
+        let vdoPlr = document.getElementById('videoplayer');
+        let x = event.pageX; 
+        let y = event.pageY; 
+        let src = e.innerHTML;
+
+        vdoPlr.style.display = 'block';
+        vdoPlr.style.left = x - 150 + 'px';
+        vdoPlr.style.top = y + 20 + 'px';
+        
+        let ampersandPosition = src.indexOf('=');
+        if(ampersandPosition != -1) src = src.substring(ampersandPosition+1, src.length);
+               
+        vdoPlr.src = 'https://www.youtube.com/embed/'+src+'/?autoplay=1&mute=1&enablejsapi=1';
+    }
+
+    function stopVideoPreview(e){
+        let vdoPlr = document.getElementById('videoplayer');
+        vdoPlr.style.display = 'none';
+        vdoPlr.src = '';
+    }
+
+    
+    
+</script>
+</body>
+</html>
