@@ -22,8 +22,8 @@ app.get('/jigsaw', (req, res) => {
 });
 
 // routes
-app.get('/draw', (req, res) => {
-    res.sendFile(__dirname + '/draw/index.html');
+app.get('/tlx', (req, res) => {
+    res.sendFile(__dirname + '/dataviz/tlx.html');
 });
 
 // port
