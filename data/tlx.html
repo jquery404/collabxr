@@ -333,13 +333,26 @@
   <body onLoad="onLoad();">
     <div id="div_part1"> Task Questionnaire - Part 1 <br />
       <br /> 
+      <br /> <label for="_id">_ID:</label><input type="text" id="_id" name="_id"> <br />
+
+      <p class="m-0">Which headset did you use?</p>
+      <label>
+        <img class="d-block img-fluid" src="../gfx/ar.png" alt="Option 1">
+        <input type="radio" name="test" value="Augmented Reality (AR) headset"> Augmented Reality (AR) headset
+      </label>
+      
+      <label>
+        <img class="d-block img-fluid" src="../gfx/vr.png" alt="Option 2">
+        <input type="radio" name="test" value="Virtual Reality (VR) headset"> Virtual Reality (VR) headset
+      </label>
+      <br />
+
       <label for="cars">Choose a condition:</label>
       <select name="conditions" id="conditions">
         <option value="2D Video Call">2D Video Call</option>
         <option value="360 Video-only Call">360 Video-only Call</option>
         <option value="Augmented 360 Call">Augmented 360 Call</option>
       </select> <br />
-      <br /> <label for="_id">_ID:</label><input type="text" id="_id" name="_id"> <br />
       <br /> Click on each scale at the point that best indicates your experience of the task <br />
       <br />
       <div id="scale0"></div>
