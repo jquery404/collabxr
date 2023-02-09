@@ -248,6 +248,7 @@
 
           let formData = new FormData();
           formData.append("Id", document.getElementById('_id').value);
+          formData.append("Device", document.querySelector('input[name="device"]:checked').value);
           formData.append("Condition", document.getElementById('conditions').value);
           formData.append("Overall", results_overall);
           formData.append("Mental", results_rating[0]);
@@ -349,12 +350,12 @@
       <p style="margin: 0;"><b>Which headset did you use?</b></p>
       <label class="device">
         <img class="d-block img-fluid" src="../gfx/ar.png" alt="Option 1">
-        <input type="radio" name="test" value="Augmented Reality (AR) headset"> Augmented Reality (AR) headset
+        <input type="radio" name="device" value="Augmented Reality (AR) headset"> Augmented Reality (AR) headset
       </label>
       
       <label class="device">
         <img class="d-block img-fluid" src="../gfx/vr.png" alt="Option 2">
-        <input type="radio" name="test" value="Virtual Reality (VR) headset"> Virtual Reality (VR) headset
+        <input type="radio" name="device" value="Virtual Reality (VR) headset"> Virtual Reality (VR) headset
       </label>
       <br style="clear:both"/>
       <br/>
