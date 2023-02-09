@@ -328,26 +328,38 @@
         height: 1cm;
         font: Bold 14px Arial, Helvetica, sans-serif;
       }
+      img {
+        display: block;
+        height: 60px;
+        text-align: center;
+        padding-left: 25px;
+      }
+      label.device{
+        float: left;
+        padding-left: 5px;
+      }
+
     </style>
   </head>
   <body onLoad="onLoad();">
     <div id="div_part1"> Task Questionnaire - Part 1 <br />
       <br /> 
-      <br /> <label for="_id">_ID:</label><input type="text" id="_id" name="_id"> <br />
-
-      <p class="m-0">Which headset did you use?</p>
-      <label>
+      <br /> <label for="_id"><b>_ID:</b></label> <input type="text" id="_id" name="_id"> <br />
+      <br/>
+      <p style="margin: 0;"><b>Which headset did you use?</b></p>
+      <label class="device">
         <img class="d-block img-fluid" src="../gfx/ar.png" alt="Option 1">
         <input type="radio" name="test" value="Augmented Reality (AR) headset"> Augmented Reality (AR) headset
       </label>
       
-      <label>
+      <label class="device">
         <img class="d-block img-fluid" src="../gfx/vr.png" alt="Option 2">
         <input type="radio" name="test" value="Virtual Reality (VR) headset"> Virtual Reality (VR) headset
       </label>
-      <br />
+      <br style="clear:both"/>
+      <br/>
 
-      <label for="cars">Choose a condition:</label>
+      <label for="cars"><b>Choose a condition:</b></label>
       <select name="conditions" id="conditions">
         <option value="2D Video Call">2D Video Call</option>
         <option value="360 Video-only Call">360 Video-only Call</option>
