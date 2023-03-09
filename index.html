@@ -120,50 +120,11 @@
     </div>
 </footer>
 
-<script type="text/javascript" src="_charts/constantine.js"></script>
-<script type="text/javascript" src="_charts/sankey.js"></script>
-<script type="text/javascript" src="_charts/heatmap.js"></script>
-<script type="text/javascript" src="_charts/stream.js"></script>
-<script type="text/javascript" src="_charts/swarm.js"></script>
-<script type="text/javascript">
-    
-    let nowPlaying = false;
-
-    document.addEventListener("DOMContentLoaded", function(event) { 
-        loadCSV();
-        // initHeatmap();
-        // initStreamgraph();
-
-        document.getElementById('copyright').innerHTML = new Date().getFullYear();
-    });
-
-
-
-    
-    function playVideoPreview(e){
-        let vdoPlr = document.getElementById('videoplayer');
-        let x = event.pageX; 
-        let y = event.pageY; 
-        let src = e.innerHTML;
-
-        vdoPlr.style.display = 'block';
-        vdoPlr.style.left = x - 150 + 'px';
-        vdoPlr.style.top = y + 20 + 'px';
-        
-        let ampersandPosition = src.indexOf('=');
-        if(ampersandPosition != -1) src = src.substring(ampersandPosition+1, src.length);
-               
-        vdoPlr.src = 'https://www.youtube.com/embed/'+src+'/?autoplay=1&mute=1&enablejsapi=1';
-    }
-
-    function stopVideoPreview(e){
-        let vdoPlr = document.getElementById('videoplayer');
-        vdoPlr.style.display = 'none';
-        vdoPlr.src = '';
-    }
-
-    
-    
-</script>
+<script type="text/javascript" src="dist/constantine.js"></script>
+<script type="text/javascript" src="dist/sankey.js"></script>
+<script type="text/javascript" src="dist/heatmap.js"></script>
+<script type="text/javascript" src="dist/stream.js"></script>
+<script type="text/javascript" src="dist/swarm.js"></script>
+<script type="text/javascript" src="dist/main.js"></script>
 </body>
 </html>
