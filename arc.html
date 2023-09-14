@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<div id="my_dataviz"></div> 
+
+
+<script>
+    var data = {
+        nodes: [
+            {id:1, name:"A", n:10},
+            {id:2, name:"B", n:9},
+            {id:3, name:"C", n:9},
+            {id:4, name:"D", n:6},
+            {id:5, name:"E", n:5},
+            {id:6, name:"F", n:4},
+            {id:7, name:"G", n:4},
+            {id:8, name:"H", n:3},
+            {id:9, name:"I", n:2},
+            {id:10, name:"J", n:1}
+        ],
+        links: [
+            {source:1, target:2},
+            {source:1, target:5},
+            {source:1, target:6},
+            {source:2, target:3},
+            {source:2, target:7},
+            {source:3, target:4},
+            {source:8, target:3},
+            {source:4, target:5},
+            {source:4, target:9},
+            {source:5, target:10}
+        ]
+    };
+
+    
+
+var margin = {
+    top: 20,
+    right: 30,
+    bottom: 20,
+    left: 30
+},
+width = 450 - margin.left - margin.right,
+height = 300 - margin.top - margin.bottom;
+
+// append the svg object to the body of the page
+var svg = d3.select("#my_dataviz")
+    .append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+    .append("g")
+    .attr("transform",
+        "translate(" + margin.left + "," + margin.top + ")");
+
+// A linear scale for node size
+var size = d3.scaleLinear().domain([1, 10]).range([2, 10]);
+var allNodes = data.nodes.map(function(d) {
+    return d.name
+})
+
+var y = d3.scalePoint()
+    .range([0, height])
+    .domain(allNodes)
+
+var idToNode = {};
+data.nodes.forEach(function(n) {
+    idToNode[n.id] = n;
+});
+
+// Add the links
+var links = svg
+    .selectAll('mylinks')
+    .data(data.links)
+    .enter()
+    .append('path')
+    .attr('d', function(d) {
+        start = y(idToNode[d.source].name)
+        end = y(idToNode[d.target].name)
+        return ['M', 50, start,
+                'A',
+                (start - end) / 2 * 1, ',',
+                (start - end) / 2, 0, 0, ',',
+                start < end ? 1 : 0, 50, ',', end
+            ]
+            .join(' ');
+    })
+    .style("fill", "none")
+    .attr("stroke", "#B8B8B8")
+    .attr("stroke-width", function(d) {
+        return idToNode[d.source].n * .3;
+    });
+
+// Add the circle for the nodes
+var nodes = svg
+    .selectAll("mynodes")
+    .data(data.nodes)
+    .enter()
+    .append("circle")
+    .attr("cx", 50)
+    .attr("cy", function(d) {
+        return (y(d.name))
+    })
+    .attr("r", function(d) {
+        return (size(d.n))
+    })
+    .style("fill", "#fff")
+    .style("stroke", "#111");
+
+svg
+    .selectAll("mylabels")
+    .data(data.nodes)
+    .enter()
+    .append("text")
+    .attr("x", 20)
+    .attr("y", function(d) {
+        return (y(d.name))
+    })
+    .text(function(d) {
+        return (d.name)
+    })
+    .style("text-anchor", "middle")
+    .style("alignment-baseline", "middle");
+
+nodes
+.on('mouseover', function(d) {
+    nodes.style('fill', "#B8B8B8")
+    d3.select(this).style('fill', '#69b3b2')
+    // Highlight the connections
+    links
+        .style('stroke', function(link_d) {
+            return link_d.source === d.id || link_d.target === d.id ? '#69b3b2' : '#b8b8b8';
+        })
+        .style('stroke-width', function(link_d) {
+            return link_d.source === d.id || link_d.target === d.id ? 4 : 1;
+        })
+})
+.on('mouseout', function(d) {
+    nodes.style('fill', "#69b3a2")
+    links
+        .style('stroke', "#B8B8B8")
+        .style('stroke-width', '1')
+})
+    
+    
+    
+</script>
+
+
+    
+</body>
+</html>

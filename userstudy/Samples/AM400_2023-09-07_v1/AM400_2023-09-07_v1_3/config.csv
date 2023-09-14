@@ -1,0 +1,14 @@
+MaxNumFrames,1,,
+Framerate,30,,
+LoadStartFrame,0,,
+LoadNumFrames,1,,
+YawDepthmap,-2,,
+YawEnvironment,84,,
+PosOffset,0,0.01,0
+rollAxisAmount,0,,
+rollAmount,0,,
+distFloor,1.8,,
+distCeiling,1.4,,
+verticalFOV,90,,
+colliderPosition,-17.75,0,-1.01
+colliderRotation,0,0,0
