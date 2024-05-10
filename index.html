@@ -12,6 +12,21 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;800;900&display=swap">
     <link rel="stylesheet" href="style.css">
+    <style>
+        .iframe-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+        }
+        .iframe-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type="text/javascript" src="https://unpkg.com/papaparse@latest/papaparse.min.js"></script>
@@ -101,6 +116,12 @@
                 <div class="col-3 p-0 pl-1">
                     <div id="sankey" style="height: 550px;"></div>
                 </div>
+            </div>
+        </div>
+
+        <div class="col-12">
+            <div class="iframe-container">
+                <iframe src="https://docs.google.com/spreadsheets/d/1Ao2L4Q_exwueK7mYPjTNfNQlTOhVRKNiQf_8QBFiVSM/edit?usp=sharing" frameborder="0" allowfullscreen></iframe>
             </div>
         </div>
         
