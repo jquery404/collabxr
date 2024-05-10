@@ -229,7 +229,7 @@ function parseHTMLTable(results){
         table+= "</tr>";
     }
     table+= "</table>";
-    document.getElementById("parsed_csv_list").innerHTML = table;
+    // document.getElementById("parsed_csv_list").innerHTML = table;
 
     loadChart();
 
